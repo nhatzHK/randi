@@ -1,0 +1,9 @@
+{
+    "prefix" : "<<",
+    "ping"   : "Pong!",
+    "say"    : "Wame will repeat after you.",
+    "slap"   : "Splash!!!!!",
+    "kick"   : "Not implemented fully yet.",
+    "id"     : "Info about Wame.",
+    "help"   : "Show this help message"
+}
