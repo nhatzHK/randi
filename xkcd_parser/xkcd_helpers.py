@@ -44,3 +44,5 @@ def getArgs (args):
         first, last = switchValues(first, last)
 
     return 1, first, last
+
+def cleanPhrase:
