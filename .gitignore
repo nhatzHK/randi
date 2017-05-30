@@ -1,0 +1,8 @@
+# Logs
+./xkcd_parser/*.log
+
+# JSON file(s)
+./xkcd_parser/*.json
+
+# Test File(s)
+./xkcd_parser/*.test
