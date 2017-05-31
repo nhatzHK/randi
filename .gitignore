@@ -1,8 +1,15 @@
 # Logs
-./xkcd_parser/*.log
+*.log
 
 # JSON file(s)
-./xkcd_parser/*.json
+*.json
 
-# Test File(s)
-./xkcd_parser/*.test
+# Test file(s)
+*.test
+
+# Vim file(s)
+*.swp
+*~
+
+# Python cache directories
+__*__
