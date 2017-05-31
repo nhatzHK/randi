@@ -1,4 +1,4 @@
-#!/home/nhatz/Code/Python_3/PY3/bin/python3
+#!python3 location
 
 #==============================================================================#
 # DEPENDENCIES LOADING                                                         #
