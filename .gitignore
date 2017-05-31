@@ -2,7 +2,8 @@
 *.log
 
 # JSON file(s)
-*.json
+#*.json
+#actually we need the json files, some of them
 
 # Test file(s)
 *.test
