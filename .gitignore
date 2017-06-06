@@ -1,0 +1,18 @@
+# Logs
+*.log
+
+# JSON file(s)
+*.json
+
+# Test file(s)
+*.test
+
+# Vim file(s)
+*.swp
+*~
+
+# Python cache directories
+__*__
+
+# Private files
+*.priv
