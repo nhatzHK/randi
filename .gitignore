@@ -14,3 +14,6 @@
 
 # Python cache directories
 __*__
+
+# Private files
+*.priv
