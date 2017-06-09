@@ -4,8 +4,10 @@ import asyncio
 import json
 import wame_helpers
 
-JSON = "/home/nhatz/Code/Bots/Wame/json/"
-CONFIG = JSON + "wame.config.json"
+JSON = "/home/nhatz/Code/GitHub/wame/json/"
+# Yep you should rename your json and append priv to it
+# This way you won't add even more private stuff on github
+CONFIG = JSON + "wame.config.json.priv"
 INDEX = JSON + "xkcd.index.json"
 REF = JSON + "xkcd.references.json"
 
@@ -41,21 +43,30 @@ async def on_message (message):
     
         if command == 'xkcd':
             tmp = await Wame.send_message (message.channel, 'Searching...')
-            comic = await wame_helpers.get_xkcd (args[1:], xkcd_index, xkcd_refs)
+            comic = await wame_helpers.get_xkcd \
+                    (args[1:], xkcd_index, xkcd_refs)
             # 0 == comic found
             if comic[0] == 0:
                 # pull the comic returned from the references 
                 c = xkcd_refs[comic[1]]
-                #await Wame.edit_message \
-                #        (tmp, \
-                #        'Number: {}\nTitle: {}\nAlt: {}\nhttp://{}'\
-                #        .format (c['number'], c['title'], c['alt'], c['url']))
-
-                embed_comic = discord.Embed (title = '{}: {}'.format (c['number'], c['title']), \
-                        colour = discord.Colour(0x000000), url = 'https://xkcd.com/{}'.format(c['number']))
+                # Create embed
+                embed_comic = discord.Embed \
+                        (title = '{}: {}'.format (c['number'], c['title']), \
+                        colour = discord.Colour(0x000000), \
+                        url = 'https://xkcd.com/{}'.format(c['number']))
                 embed_comic.set_footer (text = '{}'.format (c['alt']))
                 embed_comic.set_image (url = 'https://{}'.format (c['url']))
                 embed_comic.set_author (name = 'xkcd', url = 'https://xkcd.com')
+                # send embed, ' ', is to remove the previous text in tmp
                 await Wame.edit_message (tmp,' ', embed = embed_comic)
+            else:
+                # It hasn't been found, too bad
+                await Wame.edit_message (tmp, \
+                        "I found nothing. I'm so sawry and sad :(. \
+                        \nReply with (under 1 minute):\n \
+                        **<<random**: if you want me to pull out a random comic\n\
+                        **<<new _<query>_**: for a new query\n\
+                        **<<stop**: if you're a loser and want to give up")
+
 
 Wame.run (wame_config['token'])
