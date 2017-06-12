@@ -1,7 +1,7 @@
 const DISCORD = require ("discord.js");        // Direct dependency (npm install discordjs)
 const JSONFILE = require ("jsonfile");
-const CONFIG = require ("./wame.config.json"); // Ressource file (holds the bot properties) FIXME: Put error message &co in separate file
-const HELP = require ("./wame.help.json");     // Ressource file (holds help messages)
+const CONFIG = require ("./wame.config.json.priv"); // Ressource file (holds the bot properties) FIXME: Put error message &co in separate file
+const HELP = require ("../json/wame.help.json");     // Ressource file (holds help messages)
 
 const WAME = new DISCORD.Client ();            // Create the client, starting point of the bot
 
