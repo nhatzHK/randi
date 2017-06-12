@@ -1,10 +1,13 @@
+import sys
+sys.path.insert (0, '/home/nhatz/Code/GitHub/wamepython/xkcd/
 import json
-import xkcd_helpers # It's in ../fetch/ go get it yourself
-import wame_helpers # It's in ../wame/ ditto
+import /home/nhatz/Code/GitHub/wame/python/xkcd/fetch/xkcd_helpers # It's in ../fetch/ go get it yourself
+import /home/nhatz/Code/GitHub/wame/python/xkcd/wame/wame_helpers # It's in ../wame/ ditto
 
-REFS = 'path/to/xkcd_references.json'
-INDEX = 'path/to/xkcd_index.json'
-B_LIST = 'path/to/common.json'
+REFS = '/home/nhatz/Code/GitHub/wame/json/xkcd_references.json'
+INDEX = '/home/nhatz/Code/GitHub/wame/json/xkcd_index.json'
+B_LIST = '/home/nhatz/Code/GitHub/json/stop.words.json'
+OUTDEX = 'new_index.json'
 
 index = dict ()
 refs = wame_helpers.loadJson (REFS)
