@@ -19,7 +19,7 @@ for comic in refs:
     title = XKCD.removePunk (refs[comic]['title'])
     alt = XKCD.removePunk (refs[comic]['alt'])
     transcript = XKCD.removePunk \
-            (XKCD.removeNoise (refs[comic]['transcript']))
+            (refs[comic]['transcript'])
     # Remove noise from transcript [that's noise]
     # Record the comic in the index
     XKCD.indexComic ('{} {} {}'.format (title, alt, transcript), \

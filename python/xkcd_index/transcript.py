@@ -4,11 +4,12 @@
 # DEPENDENCIES LOADING                                                         #
 #==============================================================================#
 import sys
+sys.path.insert (0, '/home/nhatz/Code/GitHub/wame/python/lib')
 PROMPT = "[xkcd Parser]"
 EXPLAIN = 'http://www.explainxkcd.com/wiki/index.php/'
 COMMON = 'common.json'           # File to read
-INDEX = 'index_1844_1848.json'   # File to write to
-COMIC = 'comic_1844_1848.json'   # File to write to
+INDEX = 'index_1845_1849.json'   # File to write to
+COMIC = 'comic_1845_1849.json'   # File to write to
 LINK = 'www.explainxkcd.com'
 
 try:

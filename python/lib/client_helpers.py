@@ -18,10 +18,16 @@ def loadJson (f):
     return a
 
 # Notify a successful connection in the terminal
-def greet (wame):
+def greet (wame, channel = None):
+    a = ""
+    for i in wame.servers:
+        a += "\n\t        : @" + i.name
     print ("Logged in as: " + \
-            "\n\tName\t: " + wame.user.name + \
+            "\n\tName\t: " + wame.user.name +\
+            "\n\tServers : " + str (len (wame.servers)) +\
+            a +\
             "\n\tID  \t: " + wame.user.id +\
+            "\n\tBug \t: " + channel.name + "@" + channel.server.name +\
             "\n")
     wame.change_presence (game = 'with Nerds')
 
@@ -138,3 +144,29 @@ async def combine (a, b):
 
     for k in list (set (bk)):
         a[k]['score'] += 1
+
+# Clean up the query then call get_xkcd
+async def search (q, index, refs, bl):
+    import xkcd_helpers as XKCD
+    query = XKCD.removePunk (q)
+    qlist = list (set (query.split (' ')))
+    qlist = [x for x in qlist if x and not (x in bl or x == ' ')]
+    return await get_xkcd (qlist, index, refs)
+
+async def create_embed (comic):
+    import discord
+    embed_comic = discord.Embed \
+            (title = '{}: {}'.format (comic['number'], comic['title']), \
+            colour = discord.Colour(0x00ff00), \
+            url = 'https://{}'.format (comic['url']))
+
+    embed_comic.set_footer (text = '{}'.format (comic['alt']))
+    embed_comic.set_image (url = 'https://{}'.format (comic['url']))
+    embed_comic.set_author (name = 'xkcd', url = 'https://xkcd.com')
+
+    return embed_comic
+
+async def random_embed (refs):
+    import random
+    return await create_embed \
+            (refs [random.choice (list (refs.keys()))])

@@ -858,7 +858,7 @@
         "url": "www.explainxkcd.com/wiki/images/c/c1/centrifugal_force.png",
         "title": "Centrifugal Force",
         "alt": "You spin me right round baby, right round, in a manner depriving me of an inertial reference frame. Baby.",
-        "transcript": "Observers' point of view (Black Hat, us, etc.)\nJames Bond is moving in a circle, and is therefore accelerating. The force keeping him there is an inward force of contact against the centrifuge, a centripetal force. Via Newton's third law, since the centrifuge is pushing Bond inward, Bond is pushing the centrifuge outward. The centrifuge's material is strong enough not to break under this force, however.\nJames Bond's point of view\nIn James Bond's frame of reference, Bond is at rest. He is kept there by two forces: the above-mentioned inward force of contact against the centrifuge, and an outward centrifugal force. He feels both forces."
+        "transcript": "    [James Bond is strapped to a giant wheel suspended from the ceiling. Black Hat is standing next to two levers.] Black hat: How do you like my centrifuge, mister Bond? When I throw this lever, you will feel centrifugal force crush every bone in your body. [Same scene, but a closer shot.] Bond: You mean centripetal force. There's no such thing as centrifugal force. Black hat: A laughable claim, mister Bond, perpetuated by overzealous teachers of science. Simply construct Newton's laws in a rotating system and you will see a centrifugal force term appear as plain as day. [Closer shot, only Bond's head is visible.] Bond: Come now, do you really expect me to do coordinate substitution in my head while strapped to a centrifuge? Black hat: No, Mister Bond. I expect you to die."
     },
     "124": {
         "number": 124,
@@ -12906,5 +12906,40 @@
         "title": "Voting Systems",
         "alt": "Kenneth Arrow hated me because the ordering of my preferences changes based on which voting systems have what level of support. But it tells me a lot about the people I'm going to be voting with!",
         "transcript": "[White Hat and Ponytail are standing on either side of Cueball who is talking while lifting one hand.]\nCueball: I prefer approval voting, but if we're seriously considering instant runoff, then I'll argue for a Condorcet method instead."
+    },
+    "1845": {
+        "number": 1845,
+        "url": "www.explainxkcd.com/wiki/images/0/04/state_word_map.png",
+        "title": "State Word Map",
+        "alt": "The top search for every state is PORN, except Florida, where it's SEX PORN.",
+        "transcript": "You can make these maps say whatever you want by adjusting the methodology. Half of the time you're just amplifying random noise because the underlying data doesn't vary that much from one state to another. But whatever. Nobody checks this stuff. Just pick whatever normalization lets you make fun of Florida."
+    },
+    "1846": {
+        "number": 1846,
+        "url": "www.explainxkcd.com/wiki/images/d/d2/drone_problems.png",
+        "title": "Drone Problems",
+        "alt": "On the other hand, as far as they know, my system is working perfectly.",
+        "transcript": "[Megan is sitting on her knees at the porch in front of a house with a smartphone in one hand and operating with her other hand a dish-antenna pointing into the sky. Cueball comes walking up towards the stairs up to the porch while he is looking back and up over his shoulder and pointing into the air.]\nMegan: People in the park keep flying drones near me, so I've built a system to shoot them down.\nCueball: Cool! Oh yeah, there's one now.\nMegan: Time for a test!"
+    },
+    "1847": {
+        "number": 1847,
+        "url": "www.explainxkcd.com/wiki/images/6/6d/dubious_study.png",
+        "title": "Dubious Study",
+        "alt": "Sounds fine. I looked up the Academy, and it says on their MySpace page that their journal is peer-viewed and downloaded biannually.",
+        "transcript": "[Megan is standing behind Cueball who is sitting at a computer desk using a laptop.]\nMegan: Are you sure this study is legit?\nCueball: Sure, it says it was accepted for publication.\nMegan: Where?\nCueball: Hmm... The National Academy of Proceedings."
+    },
+    "1848": {
+        "number": 1848,
+        "url": "www.explainxkcd.com/wiki/images/e/e3/glacial_erratic.png",
+        "title": "Glacial Erratic",
+        "alt": "\"This will take a while, which sucks, because I'm already so busy chiseling out igneous intrusions from rock formations and watching Youtube loops of the Superman fault-sealing scene over and over.\"",
+        "transcript": "[Ponytail and Megan walks up to a large rock, Ponytail points at it.]\nPonytail: That rock is a glacial erratic-A glacier broke it off from those hills and placed it here."
+    },
+    "1849": {
+        "number": 1849,
+        "url": "www.explainxkcd.com/wiki/images/6/6f/decades.png",
+        "title": "Decades",
+        "alt": "In the 90s, our variety radio station used the tagline \"the best music of the 70s, 80s, and 90s.\" After 2000, they switched to \"the best music of the 80s, 90s, and today.\" I figured they'd change again in 2010, but it's 2017 and they're still saying \"80s, 90s, and today.\" I hope radio survives long enough for us to find out how they deal with the 2020s.",
+        "transcript": "[A timeline across the top of the box marks decades from 1960 to 2030, the labels are above the line and the ticks marking each decade are below.]"
     }
 }
