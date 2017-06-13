@@ -192,5 +192,5 @@ def indexComic (comic, comic_number, index, black_list):
 def removeNoise (s):
     import re
     regex = re.compile (".*?\[(.*?)\]")
-    s_ = re.sub (regex, "", s)
-    return s
+    clean = re.sub (regex, "", s)
+    return clean
