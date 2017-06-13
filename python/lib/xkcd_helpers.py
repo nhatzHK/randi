@@ -184,3 +184,13 @@ def indexComic (comic, comic_number, index, black_list):
 
 #==============================================================================#
 #==============================================================================#
+
+# Remove words inside brackets, aka noise
+# In "haha lo [l kek x] D lmao"
+# It'll remoe "[l kek x]"
+# And return "haha lol  D lmao"
+def removeNoise (s):
+    import re
+    regex = re.compile (".*?\[(.*?)\]")
+    s_ = re.sub (regex, "", s)
+    return s
