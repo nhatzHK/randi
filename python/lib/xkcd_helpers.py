@@ -175,10 +175,11 @@ def indexPhrase (phrase, comic_number, index):
 def indexComic (comic, comic_number, index, black_list):
     phrase = comic.split (' ')
     
-    # Magic happens here: remove empty strings and whitepsace string from list 
-    phrase = [ x for x in phrase if x and x != ' ']
+    # Magic happens here: 
+    # remove empty string, whitespaces and stop words from the list
+    phrase = [ x for x in phrase if x and not (x == ' ' or x in black_list) ]
        
-    removeBlack (phrase, black_list)
+    #removeBlack (phrase, black_list)
     indexPhrase (phrase, comic_number, index)
 
 #==============================================================================#

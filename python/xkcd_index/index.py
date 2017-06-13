@@ -1,27 +1,30 @@
 import sys
-sys.path.insert (0, '/home/nhatz/Code/GitHub/wamepython/xkcd/
+sys.path.insert (0, '/home/nhatz/Code/GitHub/wame/python/lib')
 import json
-import /home/nhatz/Code/GitHub/wame/python/xkcd/fetch/xkcd_helpers # It's in ../fetch/ go get it yourself
-import /home/nhatz/Code/GitHub/wame/python/xkcd/wame/wame_helpers # It's in ../wame/ ditto
+import client_helpers as CLIENT
+import xkcd_helpers as XKCD
 
-REFS = '/home/nhatz/Code/GitHub/wame/json/xkcd_references.json'
-INDEX = '/home/nhatz/Code/GitHub/wame/json/xkcd_index.json'
-B_LIST = '/home/nhatz/Code/GitHub/json/stop.words.json'
+PREPATH = '/home/nhatz/Code/GitHub/wame/'
+REFS = PREPATH + 'json/xkcd.references.json'
+INDEX = PREPATH + 'json/xkcd.index.json'
+BLACK_LIST = PREPATH + 'json/xkcd.common.json'
 OUTDEX = 'new_index.json'
 
 index = dict ()
-refs = wame_helpers.loadJson (REFS)
-black_list = list (set ( wame_helpers.loadJson (B_LIST)['common']))
+refs = CLIENT.loadJson (REFS)
+black_list = CLIENT.loadJson (BLACK_LIST)
 
 for comic in refs:
     # Retrieve the comic info from the references
-    title = xkcd_helpers.removePunk (refs[comic]['title'])
-    alt = xkcd_helpers.removePunk (refs[comic]['alt'])
-    transcript = xkcd_helpers.removePunk (refs[comic]['transcript'])
+    title = XKCD.removePunk (refs[comic]['title'])
+    alt = XKCD.removePunk (refs[comic]['alt'])
+    transcript = XKCD.removePunk \
+            (refs[comic]['transcript'])
+    # Remove noise from transcript [that's noise]
     # Record the comic in the index
-    xkcd_helpers.indexComic ('{} {} {}'.format (title, alt, transcript), \
+    XKCD.indexComic ('{} {} {}'.format (title, alt, transcript), \
             refs[comic]['number'], index, black_list)
 
 # save file
-with open (INDEX, 'w') as outfile:
+with open (OUTDEX, 'w') as outfile:
     json.dump (index, outfile, indent = 4)
