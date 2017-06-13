@@ -1,8 +1,10 @@
+import sys
+sys.path.insert (0, '/home/nhatz/Code/GitHub/wame/python/lib/')
 import discord
 import logging
 import asyncio
 import json
-import wame_helpers
+import client_helpers as CLIENT
 
 JSON = "/home/nhatz/Code/GitHub/wame/json/"
 # Yep you should rename your json and append priv to it
@@ -22,20 +24,20 @@ wame_config = dict ()
 xkcd_index = dict ()
 xkcd_refs = dict ()
 
-wame_config = wame_helpers.loadJson (CONFIG)
-xkcd_index = wame_helpers.loadJson (INDEX)
-xkcd_refs = wame_helpers.loadJson (REF)
+wame_config = CLIENT.loadJson (CONFIG)
+xkcd_index = CLIENT.loadJson (INDEX)
+xkcd_refs = CLIENT.loadJson (REF)
 
 @Wame.event
 async def on_ready ():
-    wame_helpers.greet (Wame)
+    CLIENT.greet (Wame)
 
 @Wame.event
 async def on_message (message):
     if not message.content.startswith (wame_config['py_prefix']):
        pass 
     else:
-        args = await wame_helpers.parse_args (message.content)
+        args = await CLIENT.parse_args (message.content)
         logging.info ('\nFull mess: {}\nCommand  : {}\nArgs     : {}'\
                 .format (message.content, args[0], args[1:]))
         
@@ -43,7 +45,7 @@ async def on_message (message):
     
         if command == 'xkcd':
             tmp = await Wame.send_message (message.channel, 'Searching...')
-            comic = await wame_helpers.get_xkcd \
+            comic = await CLIENT.get_xkcd \
                     (args[1:], xkcd_index, xkcd_refs)
             # 0 == comic found
             if comic[0] == 0:

@@ -1,14 +1,15 @@
 import asyncio
 
+# Delete all messages in channel
 async def purge (msg, wame):
     deleted = await wame.purge_from \
             (msg.channel, limit = 1000, check = is_not_me)
     await wame.send_message \
             (msg.channel, 'Deleted {} message(s)'.format (len (deleted)))
 
-def is_not_me (msg):
-    return True
-
+# Load the content of a json file
+# The return value isn't necessar a dictionary
+# f is the file name (same dir or absolute path)
 def loadJson (f):
     import json
     a = dict ()
@@ -16,7 +17,7 @@ def loadJson (f):
         a = json.load (infile)
     return a
 
-# Done
+# Notify a successful connection in the terminal
 def greet (wame):
     print ("Logged in as: " + \
             "\n\tName\t: " + wame.user.name + \
@@ -24,7 +25,8 @@ def greet (wame):
             "\n")
     wame.change_presence (game = 'with Nerds')
 
-# Done
+# Ask the user to type a tring a number of times
+# Felicitate when it's done
 async def challenge (msg, wame):
     chal = "Wame is awesome"
     it = 4
@@ -37,13 +39,13 @@ async def challenge (msg, wame):
     await wame.send_message (msg.channel, \
             'Not so dumb, heh?\nI mean great job wumpus!')
 
-# Done
+# Stop sending messages for a given time
 async def pause (msg, wame):
     t = 5
     await asyncio.sleep (10)
     await wame.send_message (msg.channel, 'Came back, has the Jedi!')
 
-# Done
+# Count the number of messages a user has in a channel
 async def count (msg, wame):
     counter = 0
     tmp = await wame.send_message (msg.channel, 'Calculating messages...')
@@ -54,6 +56,7 @@ async def count (msg, wame):
 
     await wame.edit_message (tmp, 'You have {} messages.'.format (counter))
 
+# Delete roles
 async def clean (msg, wame):
     to_del = 'new role'
     rol = msg.server.roles
@@ -68,30 +71,61 @@ async def clean (msg, wame):
     await wame.send_message \
             (msg.channel, 'New role count: {}'.format (len (msg.server.roles)))
 
+# Parse a string to extract the command and the arguments
+# msg = "<prefix>command arg1 arg2 arg3 ..."
+# return = [command, arg1, arg2, arg3, ...]
+# NOTE: A prefix of length to is assumed
 async def parse_args (msg):
     args = msg.split (' ')
     args[0] = args[0][2:] # 2 because that's the length of my prefix
     args = [a for a in args if a] # Take a wild guess: you missed. Try harder.
     return args
 
+# Search for a comic in the index and return it's number
+# Phrase: list
+# index: dict {word: {number: weight, number: weight, ...}, word: ..}
+#   word: str, number: str (isdigit() = true), weight: int
+# create a dictionary (matched) with some numbers as its keys
+# matched : {number: weight, number: weight, ..}
+# the numbers used for the keys are the one who appear as a value when ding:
+#   index[word] <- word is in the index
+#       now matched (dict) contain all the values of word (dict) as its keys
+# How:
+# If phrase contains only one word and it's a sequence of digits:
+#   if this digit is not greater than the last key of refs (dict)
+#       it is returned
+#   else: normal procedure
+#
+# for eah word in phrase:
+#   If the word is in the index:
+#       combine the content of index[word] with matched
+# 
+# if the length of match is not > 0:
+#   nothing as been found
+# else:
+# return the key with the higher value
 async def get_xkcd (phrase, index, refs):
     if len (phrase) == 1 and phrase [0].isdigit ():
-        l = list (xkcd_keys ()) [-1]
-        if int (phrase) >  l:
-            return [-1]
-        else:
-            return [0, refs [phrase [0]] ['url']]
-    else:
-        matched = dict ()
-        for word in phrase:
-            if word in index:
-                m = index[word]
-                await combine (matched, m)
-        if len (matched) > 0:
-            return [0, max (matched, key = matched.get)]
-        else:
-            return [-1]
+        if int (phrase[0]) <=  len (refs):
+            return [0, phrase [0]]
 
+    matched = dict ()
+    for word in phrase:
+        if word in index:
+            m = index[word]
+            await combine (matched, m)
+    
+    if len (matched) > 0:
+        return [0, max (matched, key = matched.get)]
+    else:
+        return [-1]
+
+# a: dict, b: dict
+# for each key in b:
+#   if the key is in a:
+#       a[key] = a[key] + b[key], aka add their values and put it in a
+#   else: 
+#       a[key] = b[key], aka create the key in a with the same  value as in b
 async def combine (a, b):
     bk = list (b.keys ())
     for k in bk:
