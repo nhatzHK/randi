@@ -82,54 +82,59 @@ async def parse_args (msg):
     return args
 
 # Search for a comic in the index and return it's number
-# Phrase: list
-# index: dict {word: {number: weight, number: weight, ...}, word: ..}
-#   word: str, number: str (isdigit() = true), weight: int
-# create a dictionary (matched) with some numbers as its keys
-# matched : {number: weight, number: weight, ..}
-# the numbers used for the keys are the one who appear as a value when ding:
-#   index[word] <- word is in the index
-#       now matched (dict) contain all the values of word (dict) as its keys
-# How:
-# If phrase contains only one word and it's a sequence of digits:
-#   if this digit is not greater than the last key of refs (dict)
-#       it is returned
-#   else: normal procedure
-#
-# for eah word in phrase:
-#   If the word is in the index:
-#       combine the content of index[word] with matched
-# 
-# if the length of match is not > 0:
-#   nothing as been found
-# else:
-# return the key with the higher value
+# Highest: greatest number of words from the query
+#       and greatest weight in absolute 'comic': [weight, score]
+# We prefer a greater score
+# i.e query = "kek lol haha"
+# index: "kek": {'1': 1, '2': 1, '4': 3},
+#        "lol": {'2': 2, '5': 1, '9': 2},
+#       "haha": {'1': 2, '3': 4, '6': 1}
+# resulting score:  '1': [3, 2], '2': [3, 2], '3': [4, 1], '4': [3, 1]
+#                   '5': [1, 1], '6': [1, 1], '9': [2, 1]
+# We first select the comic with the greatest score:
+#   '1': [3, 2], '2': [3, 2]
+# Then select the ones with greated weight:
+#   '1': [3, 2], '2': [3, 2]
+# Return one of them (1|2)
 async def get_xkcd (phrase, index, refs):
+    import random
+
     if len (phrase) == 1 and phrase [0].isdigit ():
         if int (phrase[0]) <=  len (refs):
             return [0, phrase [0]]
 
     matched = dict ()
+    score = dict ()
     for word in phrase:
         if word in index:
             m = index[word]
             await combine (matched, m)
     
     if len (matched) > 0:
-        return [0, max (matched, key = matched.get)]
+        max_score = matched \
+                [max (matched, key = lambda x: matched[x]['score'])]['score']
+        a = {x: matched[x] for x in matched if matched[x]['score'] == max_score}
+
+        max_weight = a [max (a, key = lambda x: a[x]['weight'])]['weight']
+        b = {x: a[x] for x in a if a[x]['weight'] == max_weight}
+        
+        return [0, random.choice (list(b.keys()))]
     else:
         return [-1]
 
 # a: dict, b: dict
 # for each key in b:
 #   if the key is in a:
-#       a[key] = a[key] + b[key], aka add their values and put it in a
+#       add their value
 #   else: 
 #       a[key] = b[key], aka create the key in a with the same  value as in b
 async def combine (a, b):
     bk = list (b.keys ())
     for k in bk:
         if k in a:
-            a[k] = a[k] + b[k]
+            a[k]['weight'] = a[k]['weight'] + b[k]
         else:
-            a[k] = b[k]
+            a[k] = {'weight': b[k], 'score': 0}
+
+    for k in list (set (bk)):
+        a[k]['score'] += 1
