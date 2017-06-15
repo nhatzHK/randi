@@ -1,11 +1,14 @@
+import sys
+sys.path.insert (0, '/home/nhatz/Code/GitHub/wame/python/lib/')
 import discord
 import logging
 import asyncio
 import json
-import wame_helpers
+import client_helpers as CLIENT
 
-JSON = "/home/nhatz/Code/Bots/Wame/json/"
-CONFIG = JSON + "wame.config.json"
+
+JSON = "/home/nhatz/Code/GitHub/wame/json/"
+CONFIG = JSON + "wame.config.json.priv"
 INDEX = JSON + "xkcd.index.json"
 REF = JSON + "xkcd.references.json"
 
@@ -35,30 +38,30 @@ async def startsWith (test, start):
 
 @Wame.event
 async def on_ready ():
-    wame_helpers.greet (Wame)
+    CLIENT.greet (Wame)
 
 @Wame.event
 async def on_message (message):
     if not message.content.startswith (wame_config['py_prefix']):
        pass 
     else:
-        args = await wame_helpers.parse_args (message.content)
+        args = await CLIENT.parse_args (message.content)
         logging.info ('\nFull mess: {}\nCommand  : {}\nArgs     : {}'\
                 .format (message.content, args[0], args[1:]))
         
         command = args [0]
         if command == 'count':
-            await wame_helpers.count (message, Wame)
+            await CLIENT.count (message, Wame)
     
         elif command == 'sleep':
-            await wame_helpers.pause (message, Wame)
+            await CLIENT.pause (message, Wame)
 
         elif command == 'start':
-            await wame_helpers.challenge (message, Wame)
+            await CLIENT.challenge (message, Wame)
     
         elif command == 'xkcd':
             tmp = await Wame.send_message (message.channel, 'Searching...')
-            comic = await wame_helpers.get_xkcd (args[1:], xkcd_index, xkcd_refs)
+            comic = await CLIENT.get_xkcd (args[1:], xkcd_index, xkcd_refs)
             if comic[0] == 0:
                 c = xkcd_refs[comic[1]]
                 await Wame.edit_message \
@@ -81,10 +84,10 @@ async def on_message (message):
             #            (tmp, 'Provide a number')
 
         elif command == 'purge':
-            #await wame_helpers.purge (message, Wame)
+            await CLIENT.purge (message, Wame)
             pass
 
         elif command == 'clean':
-            await wame_helpers.clean (message, Wame)
+            await CLIENT.clean (message, Wame)
 
 Wame.run (wame_config['token'])

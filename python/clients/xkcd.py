@@ -90,7 +90,7 @@ async def on_message (message):
             await Wame.send_message (message.channel, embed = embed_comic)
         elif command == 'latest':
             embed_comic = await CLIENT.create_embed \
-                    (xkcd_refs [list (xkcd_refs)[-1]])
+                    (xkcd_refs [list (xkcd_refs.keys ())[-1]])
             await Wame.send_message (message.channel, embed = embed_comic)
         elif command == 'report':
             bug_channel = Wame.get_channel ("320387081446752257")

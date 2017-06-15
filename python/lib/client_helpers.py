@@ -1,9 +1,12 @@
 import asyncio
 
+def is_someone (msg):
+    return True
+
 # Delete all messages in channel
 async def purge (msg, wame):
     deleted = await wame.purge_from \
-            (msg.channel, limit = 1000, check = is_not_me)
+            (msg.channel, limit = 1000, check = is_someone)
     await wame.send_message \
             (msg.channel, 'Deleted {} message(s)'.format (len (deleted)))
 
