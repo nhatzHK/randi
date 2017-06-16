@@ -12941,5 +12941,26 @@
         "title": "Decades",
         "alt": "In the 90s, our variety radio station used the tagline \"the best music of the 70s, 80s, and 90s.\" After 2000, they switched to \"the best music of the 80s, 90s, and today.\" I figured they'd change again in 2010, but it's 2017 and they're still saying \"80s, 90s, and today.\" I hope radio survives long enough for us to find out how they deal with the 2020s.",
         "transcript": "[A timeline across the top of the box marks decades from 1960 to 2030, the labels are above the line and the ticks marking each decade are below.]"
+    },
+    "1850": {
+        "number": 1850,
+        "url": "www.explainxkcd.com/wiki/images/4/48/air_force_museum.png",
+        "title": "Air Force Museum",
+        "alt": "I had fun visiting the museum at Dover Air Force Base, unless they don't have a museum, in which case I've never been to Delaware in my life.",
+        "transcript": "[Megan walks from left over to Cueball.]\nMegan: How was your day?\nCueball: I visited the military aircraft museum over at the Air Force base. It was really neat!"
+    },
+    "1850": {
+        "number": 1850,
+        "url": "www.explainxkcd.com/wiki/images/4/48/air_force_museum.png",
+        "title": "Air Force Museum",
+        "alt": "I had fun visiting the museum at Dover Air Force Base, unless they don't have a museum, in which case I've never been to Delaware in my life.",
+        "transcript": "[Megan walks from left over to Cueball.]\nMegan: How was your day?\nCueball: I visited the military aircraft museum over at the Air Force base. It was really neat!"
+    },
+    "1851": {
+        "number": 1851,
+        "url": "www.explainxkcd.com/wiki/images/8/87/magnetohydrodynamics.png",
+        "title": "Magnetohydrodynamics",
+        "alt": "Magnetohydrodynamics combines the intuitive nature of Maxwell's equations with the easy solvability of the Navier-Stokes equations. It's so straightforward physicists add \"relativistic\" or \"quantum\" just to keep it from getting boring.",
+        "transcript": "[Ponytail standing on the left, facing Cueball and Megan]\nPonytail: The Sun's atmosphere is a superhot plasma gverned by Magnetohydrodynamic forces...\nCueball: Ah, yes, of course."
     }
 }
