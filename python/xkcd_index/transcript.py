@@ -6,10 +6,10 @@
 import sys
 sys.path.insert (0, '/home/nhatz/Code/GitHub/wame/python/lib')
 PROMPT = "[xkcd Parser]"
+PREPATH = '/home/nhatz/Code/GitHub/wame/'
 EXPLAIN = 'http://www.explainxkcd.com/wiki/index.php/'
-COMMON = 'common.json'           # File to read
-INDEX = 'index_1845_1849.json'   # File to write to
-COMIC = 'comic_1845_1849.json'   # File to write to
+COMMON = PREPATH + 'json/xkcd.common.json'           # File to read
+COMIC = 'refs_fresh.json'   # File to write to
 LINK = 'www.explainxkcd.com'
 
 try:
@@ -33,7 +33,7 @@ black_list = list ()
 try:
     print (PROMPT + " Loading black list")
     with open (COMMON) as infile:
-        black_list = list (set (json.load (infile)['common']))
+        black_list = json.load (infile)
     print (PROMPT + " Blacklist loaded.")
 except:
     xkcd_helpers.fileNotFound (PROMPT, COMMON)
@@ -103,13 +103,6 @@ for i in range(args [1], args [2] + 1):
         print (PROMPT + " Requested elements retrieved")
         print (PROMPT + " Indexing comic #" + str (i) )
         
-        title = xkcd_helpers.removePunk (fetch [1])
-        alt =  xkcd_helpers.removePunk (fetch [2])
-        transcript = xkcd_helpers.removePunk (fetch [3])
-        xkcd_helpers.indexComic (title + " " + alt + " " + transcript,\
-                i, index, black_list)
-        print (PROMPT + " Comic #" + str (i) + " indexed succesfully.")
-        
         comic[i] = {\
                 "number": i, \
                 "url": "wwww.xkcd.com/" + str (i), \
@@ -118,7 +111,8 @@ for i in range(args [1], args [2] + 1):
                 "transcript": fetch [3], \
                 "url": LINK + fetch[4] \
                 }
-        
+        print (PROMPT + " Comic " + str(i) + " succesfully referenced.")
+
         # Uncomment for debugging
         # print (index)
         # print (comic)
@@ -144,17 +138,6 @@ bruh.quit ()
 #==============================================================================#
 # FILES SAVING                                                                 #
 #==============================================================================#
-
-try:
-    print (PROMPT + " Saving index in " + INDEX)
-    with open (INDEX, 'w') as outfile:
-        json.dump (index, outfile, indent = 4)
-    print (PROMPT + " Index successfully saved.")
-except:
-    print (PROMPT + \
-            " Something went wrong while writing the index to the disk. \
-            \n\tYour data is likely not saved. \
-            \n\tGod definitely doesn't exist.")
 
 try:
     print (PROMPT + " Saving comic references in " + COMIC)

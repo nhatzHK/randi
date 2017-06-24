@@ -12962,5 +12962,26 @@
         "title": "Magnetohydrodynamics",
         "alt": "Magnetohydrodynamics combines the intuitive nature of Maxwell's equations with the easy solvability of the Navier-Stokes equations. It's so straightforward physicists add \"relativistic\" or \"quantum\" just to keep it from getting boring.",
         "transcript": "[Ponytail standing on the left, facing Cueball and Megan]\nPonytail: The Sun's atmosphere is a superhot plasma gverned by Magnetohydrodynamic forces...\nCueball: Ah, yes, of course."
+    },
+    "1852": {
+        "number": 1852,
+        "url": "www.explainxkcd.com/wiki/images/d/d3/election_map.png",
+        "title": "Election Map",
+        "alt": "Luckily for my interpretation, no precincts were won by the Green Party.",
+        "transcript": "[On a TV-screen Cueball is seen pointing at a map on the left which is colored in red and blue. There is a header on the map and in the top right corner of the screen the title of the program is shown. Below this at the bottom of the screen text indicate that the program is broad live. Cueball explains the map, with his text shown above the TV.]\nHeader: Results\nTitle: Election Night\nLive"
+    },
+    "1853": {
+        "number": 1853,
+        "url": "www.explainxkcd.com/wiki/images/5/59/once_per_day.png",
+        "title": "Once Per Day",
+        "alt": "I'm not totally locked into my routine\u2014twice a year, I take a break to change the batteries in my smoke detectors.",
+        "transcript": "[Megan and Cueball are standing together, facing each other.]\nMegan: Got any plans for the day?\nCueball: I'm going to eat an apple, an egg, one baby aspirin, and a piece of dark chocolate, drink six glasses of water, one glass of red wine, a cup of coffee, and a cup of tea, then do 30 minutes of exercise.\nCueball: Then back to sleep for another 8 hours!"
+    },
+    "1854": {
+        "number": 1854,
+        "url": "www.explainxkcd.com/wiki/images/c/c3/refresh_types.png",
+        "title": "Refresh Types",
+        "alt": "The hardest refresh requires both a Mac keyboard and a Windows keyboard as a security measure, like how missile launch systems require two keys to be turned at once.",
+        "transcript": "Refresh Type Example Shortcuts Effect\nSoft Refresh Gmail REFRESH Button Requests update within JavaScript\nNormal Refresh F5, CTRL-R, \u2318R Refreshes page\nHard Refresh CTRL-F5, CTRL-\u21e7, \u2318\u21e7R Refreshes page including cached files\nHarder Refresh CTRL-\u21e7-HYPER-ESC-R-F5 Remotely cycles power to datacenter\nHardest Refresh CTRL-\u2318\u229e\u21e7#-R-F5-F-5-ESC-O-0-\u00d8-\u23cf-SCROLL LOCK Internet starts over from ARPANET"
     }
 }
