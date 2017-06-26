@@ -46,7 +46,7 @@ wgame = discord.Game (name = wame_config['game'])
 @Wame.event
 async def on_ready ():
     await Wame.change_presence (game = wgame)
-    bug_channel = Wame.get_channel ("320387081446752257")
+    bug_channel = Wame.get_channel (wame_config['report_channel'])
     CLIENT.greet (Wame, channel = bug_channel)
 
 @Wame.event

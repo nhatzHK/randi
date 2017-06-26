@@ -9,6 +9,5 @@
             "description" : "**What? \t :\t A bot posting xkcd comics.\nUsage  \t :\t `<prefix><command> [arguments]`\nPrefix   \t :\t your_prefix**\n\n**xkcd**\n\t`<prefix>xkcd [args]`\n\tSearch for an xkcd comic containing the words in args.\n\n**random**\n\t`<prefix>random`\n\tPost a random comic. Equivalent to `<prefix>xkcd`.\n\n**latest**\n\t`<prefix><latest>`\n\tShow the latest xkcd comic.\n\n**report**\n\t`<prefix>report <message>`\n\tReport a bug.\n\n**help**\n\t`<prefix>help`\n\tDisplay this help message.",
             "icon_url": "https://cdn.discordapp.com/attachments/320387081446752257/324203128171921419/robot-1530759_960_720.png"
           },
-    "game"          : "game_to_display_in_the_status",
-    "latest"        : "latest_comic_referenced_number"
+    "game"          : "game_to_display_in_the_status"
 }
