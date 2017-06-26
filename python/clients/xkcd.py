@@ -1,13 +1,19 @@
 import sys
-sys.path.insert (0, '/home/nhatz/Code/GitHub/wame/python/lib/')
 import discord
 import logging
 import asyncio
 import json
 import random
+
+PATH = dict ()
+with open ('./xkcd.path.json.priv') as path_file:
+    PATH = json.load (path_file)
+
+
+sys.path.insert (0, PATH['lib'])
 import client_helpers as CLIENT
 
-JSON = "/home/nhatz/Code/GitHub/wame/json/"
+JSON = PATH['json']
 # Yep you should rename your config.json and append priv to it
 # This way you won't add even more private stuff on github
 CONFIG = JSON + "xkcd.config.json.priv"
@@ -16,10 +22,6 @@ REF = JSON + "xkcd.references.json"
 BL = JSON + "xkcd.common.json"
 
 logging.basicConfig (level = logging.INFO)
-
-Wame = discord.Client ()
-# FIXME: should be a discord.Channel () if possible
-wgame = discord.Game (name = "xkcd")
 
 wame_config = dict ()
 xkcd_index = dict ()
@@ -37,6 +39,9 @@ wame_help = discord.Embed \
         description = wame_config['help']['description'])
 wame_help.set_footer (text = wame_config['help']['footer'], \
         icon_url = wame_config['help']['icon_url'])
+
+Wame = discord.Client ()
+wgame = discord.Game (name = wame_config['game'])
 
 @Wame.event
 async def on_ready ():
@@ -91,6 +96,8 @@ async def on_message (message):
         elif command == 'latest':
             embed_comic = await CLIENT.create_embed \
                     (xkcd_refs [list (xkcd_refs.keys ())[-1]])
+            # For dumb system like ubuntu, uncomment the following line
+            # embed_comic = wame_config['latest']
             await Wame.send_message (message.channel, embed = embed_comic)
         elif command == 'report':
             bug_channel = Wame.get_channel ("320387081446752257")
@@ -102,7 +109,7 @@ async def on_message (message):
                     (text = '{}@{}'.format (message.channel, message.server))
             report = await Wame.send_message (bug_channel, embed = embed_report)
             await Wame.pin_message (report)
-        else:
+        elif command == 'help':
             await Wame.send_message (message.channel, \
                     embed = wame_help)
 
