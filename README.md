@@ -5,31 +5,21 @@
 ## Prefix        :     <>
 
 ### xkcd
-```
-    <prefix>xkcd args[]
-```
+`<prefix>xkcd args[]`
     Search for an xkcd comic containing the words in args.
 
 ### random
-```
-    <prefix>random
-```
+`<prefix>random`
     Post a random comic. Equivalent to <prefix>xkcd.
 
 ### latest
-```
-    <prefix><latest>
-```
+`<prefix><latest>`
     Show the latest xkcd comic.
 
 ### report
-```
-    <prefix>report <message
-```
+`<prefix>report <message`
     Report a bug.
 
 ### help
-```
-    <prefix>help
-```
+`<prefix>help`
     Display this help message. Equivalent to <prefix>[a random string]
