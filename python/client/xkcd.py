@@ -6,8 +6,16 @@ import json
 import random
 
 PATH = dict ()
-with open ('./xkcd.path.json.priv') as path_file:
-    PATH = json.load (path_file)
+if (sys.argv [1]):
+    try:
+        with open (sys.argv [1]) as path_file:
+            PATH = json.load (path_file)
+    except:
+        print ('Unable to open file: {}'.format (sys.argv [1]))
+        exit (2)
+else:
+    print ('Usage python xkcd.py /path/to/path.json')
+    exit (1)
 
 
 sys.path.insert (0, PATH['lib'])
