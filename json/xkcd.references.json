@@ -12983,5 +12983,19 @@
         "title": "Refresh Types",
         "alt": "The hardest refresh requires both a Mac keyboard and a Windows keyboard as a security measure, like how missile launch systems require two keys to be turned at once.",
         "transcript": "Refresh Type Example Shortcuts Effect\nSoft Refresh Gmail REFRESH Button Requests update within JavaScript\nNormal Refresh F5, CTRL-R, \u2318R Refreshes page\nHard Refresh CTRL-F5, CTRL-\u21e7, \u2318\u21e7R Refreshes page including cached files\nHarder Refresh CTRL-\u21e7-HYPER-ESC-R-F5 Remotely cycles power to datacenter\nHardest Refresh CTRL-\u2318\u229e\u21e7#-R-F5-F-5-ESC-O-0-\u00d8-\u23cf-SCROLL LOCK Internet starts over from ARPANET"
+    },
+    "1855": {
+        "number": 1855,
+        "url": "www.explainxkcd.com/wiki/images/e/e5/telephoto.png",
+        "title": "Telephoto",
+        "alt": "I was banned from the airliners.net photography forum by concerned moderators after the end of my lens started brushing against planes as they flew by.",
+        "transcript": "[Cueball stands behind a huge telephoto lens which rests on two tripods, one at the left in front of Cueball, and an other larger one in the middle. The lens is more than five times longer than Cueball is high. In front of the lens is a tree with a bird on top close to the lens. The bird is labeled \"Subject\". Inside the telephoto lens at the location of the objective lens a small device is shown and labeled \"Webcam\". From that device a small cable runs through the entire telephoto lens to the eyepiece, where an other device labeled \"Camera\" is shown.]\n[Caption below the panel:]\nTelephoto tip: If you add enough converters and extenders, you don't actually need a fancy lens."
+    },
+    "1856": {
+        "number": 1856,
+        "url": "www.explainxkcd.com/wiki/images/d/d2/existence_proof.png",
+        "title": "Existence Proof",
+        "alt": "Real analysis is way realer than I expected.",
+        "transcript": "[Miss Lenhart stands in front of a whiteboard and points at calculations written on it.]\nMiss Lenhart: There exists some number x such that f(x)=G(f(0))=1."
     }
 }

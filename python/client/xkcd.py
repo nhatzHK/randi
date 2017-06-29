@@ -62,7 +62,7 @@ async def on_message (message):
     if not message.content.startswith (wame_config['prefix']):
         pass
     else:
-        args = await CLIENT.parse_args (message.content)
+        args = await CLIENT.parse_args (message.content, wame_config['prefix'])
         logging.info ('\nFull mess: {}\nCommand  : {}\nArgs     : {}'\
                 .format (message.content, args[0], args[1:]))
 

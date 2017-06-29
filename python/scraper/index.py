@@ -1,10 +1,10 @@
 import sys
-sys.path.insert (0, '/home/nhatz/Code/GitHub/wame/python/lib')
+sys.path.insert (0, '/home/nhatz/Code/GitHub/randi/python/lib')
 import json
 import client_helpers as CLIENT
 import xkcd_helpers as XKCD
 
-PREPATH = '/home/nhatz/Code/GitHub/wame/'
+PREPATH = '/home/nhatz/Code/GitHub/randi/'
 REFS = PREPATH + 'json/xkcd.references.json'
 INDEX = PREPATH + 'json/xkcd.index.json'
 BLACK_LIST = PREPATH + 'json/xkcd.common.json'

@@ -4,9 +4,9 @@
 # DEPENDENCIES LOADING                                                         #
 #==============================================================================#
 import sys
-sys.path.insert (0, '/home/nhatz/Code/GitHub/wame/python/lib')
+sys.path.insert (0, '/home/nhatz/Code/GitHub/randi/python/lib')
 PROMPT = "[xkcd Parser]"
-PREPATH = '/home/nhatz/Code/GitHub/wame/'
+PREPATH = '/home/nhatz/Code/GitHub/randi/'
 EXPLAIN = 'http://www.explainxkcd.com/wiki/index.php/'
 COMMON = PREPATH + 'json/xkcd.common.json'           # File to read
 COMIC = 'refs_fresh.json'   # File to write to
