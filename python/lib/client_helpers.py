@@ -1,4 +1,7 @@
 import asyncio
+import json
+import random
+import discord
 
 def is_someone (msg):
     return True
@@ -14,7 +17,6 @@ async def purge (msg, wame):
 # The return value isn't necessar a dictionary
 # f is the file name (same dir or absolute path)
 def loadJson (f):
-    import json
     a = dict ()
     with open (f) as infile:
         a = json.load (infile)
@@ -86,7 +88,7 @@ async def clean (msg, wame):
 # NOTE: A prefix of length to is assumed
 async def parse_args (msg, prefix):
     args = msg.split (' ')
-    args[0] = args[0][len(prefix):] # 2 because that's the length of my prefix
+    args[0] = args[0][len(prefix):]
     args = [a for a in args if a] # Take a wild guess: you missed. Try harder.
     return args
 
@@ -106,8 +108,6 @@ async def parse_args (msg, prefix):
 #   '1': [3, 2], '2': [3, 2]
 # Return one of them (1|2)
 async def get_xkcd (phrase, index, refs):
-    import random
-
     if len (phrase) == 1 and phrase [0].isdigit ():
         if int (phrase[0]) <=  len (refs):
             return [0, phrase [0]]
@@ -157,7 +157,6 @@ async def search (q, index, refs, bl):
     return await get_xkcd (qlist, index, refs)
 
 async def create_embed (comic):
-    import discord
     embed_comic = discord.Embed \
             (title = '{}: {}'.format (comic['number'], comic['title']), \
             colour = discord.Colour(0x00ff00), \
@@ -170,6 +169,21 @@ async def create_embed (comic):
     return embed_comic
 
 async def random_embed (refs):
-    import random
     return await create_embed \
             (refs [random.choice (list (refs.keys()))])
+
+async def report_embed (msg, report):
+    t = 'Report -> {}'.format (report['type'])
+    c = report['color']
+
+    d = '\n**Context**\nServer -> {}\nChannel -> {}\nUser -> {}\nTime -> {}\
+            \n**Client**: \n\tName: -> {}\n\tId -> {}\n' \
+            .format (msg.server, msg.channel, msg.author, msg.timestamp, \
+            report['client'].user.name, report['client'].user.id)
+    d+= '**Message**\n{}\n'.format (msg.content)
+    if report['type'] is 'internal':
+        d += '\n\n**Internal**{}'.format (report['internal_report'])
+
+    embed_report = discord.Embed (title = t, description = d, colour = c)
+
+    return embed_report

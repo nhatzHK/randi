@@ -63,41 +63,42 @@ async def on_message (message):
         pass
     else:
         args = await CLIENT.parse_args (message.content, wame_config['prefix'])
+        command = args[0]
+        args = args[1:]
         logging.info ('\nFull mess: {}\nCommand  : {}\nArgs     : {}'\
-                .format (message.content, args[0], args[1:]))
+                .format (message.content, command, args))
 
-        command = args [0]
-        if len (args) == 0:
-            pass
-        elif command == 'xkcd':
+        if command == 'xkcd':
             tmp = await Wame.send_message (message.channel, 'Searching...')
 
-            # 0 == comic found
-            comic = await CLIENT.search \
-                    (message.content [5:], xkcd_index, xkcd_refs, blk_list)
-            if len (args) < 2:
+            if len (args) is 0:
                 embed_comic = await CLIENT.random_embed (xkcd_refs)
-                await Wame.edit_message (tmp, ' ', embed = embed_comic) 
-            elif comic[0] == 0:
-                # Create embed
-                embed_comic = await CLIENT.create_embed (xkcd_refs [comic [1]])
                 await Wame.edit_message (tmp, ' ', embed = embed_comic)
             else:
-                # It hasn't been found, too bad
-                not_found = discord.Embed (description =
-                    "_I found nothing. I'm so sawry and sad :(_. \
-                    \nReply with **`random`** for a surprise\n",
-                    colour = (0x000000))
-                await Wame.edit_message (tmp, " ", embed = not_found)
-                msg = await Wame.wait_for_message \
-                        (author = message.author, \
-                        content = "random", timeout = 20)
-                if (msg):
-                    embed_comic = await CLIENT.random_embed (xkcd_refs)
-                    await Wame.send_message \
-                            (message.channel, embed = embed_comic)
+                comic = await CLIENT.search \
+                    (' '.join(args), xkcd_index, xkcd_refs, blk_list)
+                # 0 == comic found
+                if comic[0] == 0:
+                    # Create embed
+                    embed_comic = await \
+                            CLIENT.create_embed (xkcd_refs [comic [1]])
+                    await Wame.edit_message (tmp, ' ', embed = embed_comic)
                 else:
-                    await Wame.edit_message (tmp, "Timeout")
+                    # It hasn't been found, too bad
+                    not_found = discord.Embed (description =
+                        "_I found nothing. I'm so sawry and sad :(_. \
+                    \nReply with **`random`** for a surprise\n", \
+                    colour = (0x000000))
+                    await Wame.edit_message (tmp, " ", embed = not_found)
+                    msg = await Wame.wait_for_message \
+                            (author = message.author, \
+                            content = "random", timeout = 20)
+                    if (msg):
+                        embed_comic = await CLIENT.random_embed (xkcd_refs)
+                        await Wame.send_message \
+                                (message.channel, embed = embed_comic)
+                    else:
+                        await Wame.edit_message (tmp, "Timeout")
         elif command == 'random':
             embed_comic = await CLIENT.random_embed (xkcd_refs)
             await Wame.send_message (message.channel, embed = embed_comic)
@@ -106,13 +107,9 @@ async def on_message (message):
                     (xkcd_refs[str(max(list(map(int, xkcd_refs))))])
             await Wame.send_message (message.channel, embed = embed_comic)
         elif command == 'report':
-            bug_channel = Wame.get_channel ("320387081446752257")
-            embed_report = discord.Embed (title = 'Report: {} -> {}'.format \
-                    (message.timestamp, message.author), \
-                    description = message.content[8:],\
-                    colour = (0xff0000))
-            embed_report.set_footer \
-                    (text = '{}@{}'.format (message.channel, message.server))
+            bug_channel = Wame.get_channel (wame_config['report_channel'])
+            embed_report = await CLIENT.report_embed (message, \
+                    {'type': 'User', 'color': (0xff0000), 'client': Wame})
             report = await Wame.send_message (bug_channel, embed = embed_report)
             await Wame.pin_message (report)
         elif command == 'help':
