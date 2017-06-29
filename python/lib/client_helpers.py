@@ -84,9 +84,9 @@ async def clean (msg, wame):
 # msg = "<prefix>command arg1 arg2 arg3 ..."
 # return = [command, arg1, arg2, arg3, ...]
 # NOTE: A prefix of length to is assumed
-async def parse_args (msg):
+async def parse_args (msg, prefix):
     args = msg.split (' ')
-    args[0] = args[0][2:] # 2 because that's the length of my prefix
+    args[0] = args[0][len(prefix):] # 2 because that's the length of my prefix
     args = [a for a in args if a] # Take a wild guess: you missed. Try harder.
     return args
 
