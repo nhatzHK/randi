@@ -12997,5 +12997,12 @@
         "title": "Existence Proof",
         "alt": "Real analysis is way realer than I expected.",
         "transcript": "[Miss Lenhart stands in front of a whiteboard and points at calculations written on it.]\nMiss Lenhart: There exists some number x such that f(x)=G(f(0))=1."
+    },
+    "1857": {
+        "number": 1857,
+        "url": "www.explainxkcd.com/wiki/images/8/86/emoji_movie.png",
+        "title": "Emoji Movie",
+        "alt": "Some other studio should do the Antz/A Bug's Life thing and release The Dingbats Movie at the same time.",
+        "transcript": "[Megan and Cueball are walking together while Megan is looking at her smartphone.]\nMegan: Did you see there's an emoji movie?\nCueball: If they have to make a movie about a section of Unicode, it's not the worst choice...\nMegan: They should do a whole series. I would watch the Combining Diacritical Marks movie.\nCueball: That series would have way too many characters."
     }
 }
