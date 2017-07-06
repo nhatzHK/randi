@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import sys
 sys.path.insert (0, '/home/nhatz/Code/GitHub/randi/python/lib')
 import json
