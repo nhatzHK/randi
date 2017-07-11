@@ -11,7 +11,6 @@ EXPLAIN = 'http://www.explainxkcd.com/wiki/index.php/'
 
 REFS = PREPATH + 'json/xkcd.references.json'
 COMMON = PREPATH + 'json/xkcd.common.json'
-COMIC = 'refs_fresh.json'
 
 LINK = 'www.explainxkcd.com'
 
@@ -130,8 +129,8 @@ bruh.quit ()
 #==============================================================================#
 
 try:
-    print (PROMPT + " Saving comic references in " + COMIC)
-    with open (COMIC, 'w') as outfile:
+    print (PROMPT + " Saving comic references in " + REFS)
+    with open (REFS, 'w') as outfile:
         json.dump (comic, outfile, indent = 4)
     print (PROMPT + " Comic references succesfully saved.")
 except:

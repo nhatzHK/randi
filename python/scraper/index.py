@@ -10,7 +10,6 @@ PREPATH = '/home/nhatz/Code/GitHub/randi/'
 REFS = PREPATH + 'json/xkcd.references.json'
 INDEX = PREPATH + 'json/xkcd.index.json'
 BLACK_LIST = PREPATH + 'json/xkcd.common.json'
-OUTDEX = 'new_index.json'
 
 index = dict ()
 refs = CLIENT.loadJson (REFS)
@@ -28,5 +27,5 @@ for comic in refs:
             refs[comic]['number'], index, black_list)
 
 # save file
-with open (OUTDEX, 'w') as outfile:
+with open (INDEX, 'w') as outfile:
     json.dump (index, outfile, indent = 4)
