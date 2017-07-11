@@ -8,8 +8,11 @@ sys.path.insert (0, '/home/nhatz/Code/GitHub/randi/python/lib')
 PROMPT = "[xkcd Parser]"
 PREPATH = '/home/nhatz/Code/GitHub/randi/'
 EXPLAIN = 'http://www.explainxkcd.com/wiki/index.php/'
-COMMON = PREPATH + 'json/xkcd.common.json'           # File to read
-COMIC = 'refs_fresh.json'   # File to write to
+
+REFS = PREPATH + 'json/xkcd.references.json'
+COMMON = PREPATH + 'json/xkcd.common.json'
+COMIC = 'refs_fresh.json'
+
 LINK = 'www.explainxkcd.com'
 
 try:
@@ -38,26 +41,14 @@ try:
 except:
     xkcd_helpers.fileNotFound (PROMPT, COMMON)
 
-index = dict ()
 comic = dict ()
-# FIXME: overwrite file when dumping json object
-# currently it just adds the new data to the file
-# tht's not what I need
-#try:
-#    print (PROMPT + " Loading index")
-#    with open (INDEX) as infile:
-#        index = json.load (infile)
-#    print (PROMPT + " Index loaded")
-#except:
-#    xkcd_helpers.fileNotFound (PROMPT, INDEX)
-#
-#try:
-#    print (PROMPT + " Loading comics' references")
-#    with open (COMIC) as infile:
-#        comic = json.load (infile)
-#    print (PROMPT + " Comics' references loaded")
-#except:
-#    xkcd_helpers.fileNotFound (PROMPT, COMIC)
+try:
+    print (PROMPT + " Loading comics' references")
+    with open (REFS) as infile:
+        comic = json.load (infile)
+    print (PROMPT + " Comics' references loaded")
+except:
+    xkcd_helpers.fileNotFound (PROMPT, REFS)
 
 #==============================================================================#
 # ARGUMENT CHECK                                                               #
@@ -114,7 +105,6 @@ for i in range(args [1], args [2] + 1):
         print (PROMPT + " Comic " + str(i) + " succesfully referenced.")
 
         # Uncomment for debugging
-        # print (index)
         # print (comic)
     
     elif (fetch[0] == -1):
