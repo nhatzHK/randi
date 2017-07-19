@@ -13027,17 +13027,31 @@
         "transcript": "[A chart with the Y-axis titled \"How Philosophically Exciting the Questions Are to a Novice Student\" and the X-axis titled \"How Many Years of Math are Needed to Understand the Answers\". The upper-right portion of the chart is labeled \"Danger Zone\". The following topics are charted as follows:\nBasic Physics: low excitement, low prerequisites\nFluid Dynamics: low excitement, high prerequisites\nMagnets: medium excitement, medium prerequisites\nGeneral Relativity: medium excitement, high prerequisites (on the border to the \"Danger Zone\")\nSpecial Relativity: high excitement, low prerequisites\nQuantum Mechanics: high excitement, high prerequisites (in the \"Danger Zone\")]"
     },
     "1862": {
-      "number": 1862,
-      "url": "ww.explainxkcd.com/wiki/images/0/01/particle_properties.png",
-      "title": "Paritcle Properties",
-      "alt": " Each particle also has a password which allows its properties to be changed, but the cosmic censorship hypothesis suggests we can never observe the password itself—only its secure hash.",
-      "transcript": "Electric charge Mass Spin number Flavor Color charge Mood Alignment  Hit points  Rating String type  Batting average Proof  Heat Street value Entropy"
+        "number": 1862,
+        "url": "ww.explainxkcd.com/wiki/images/0/01/particle_properties.png",
+        "title": "Paritcle Properties",
+        "alt": " Each particle also has a password which allows its properties to be changed, but the cosmic censorship hypothesis suggests we can never observe the password itself\u2014only its secure hash.",
+        "transcript": "Electric charge Mass Spin number Flavor Color charge Mood Alignment  Hit points  Rating String type  Batting average Proof  Heat Street value Entropy"
     },
     "1863": {
-      "number": 1863,
-      "url": "www.explainxkcd.com/wiki/images/3/31/screenshots.png",
-      "title": "Screenshots",
-      "alt": "For the final exam, you take a screenshot showing off all the work you've done in the class, and it has to survive being uploaded, thumbnailed, and re-screenshotted through a chain of social media sites.",
-      "transcript": "[The left side of the panel shows three images. The largest image is a screenshot of text with the middle section highlighted and margins and top and bottom rows marked with red lines and arrows. The two smaller images below are cropped versions of the screenshot in the first image: the left image has an incorrect \"squashed\" aspect ratio and a red X on it, while the right image has a correct aspect ratio and a green check mark.] [The right side of the panel:] Syllabus Highlighting: What & how much Aspect ratios Cropping: Pre- and post- Whitespace Screenshots vs links Catching the right GIF frame Snapchat and trust Embarrassing backround tabs Spellcheck's red outlines Security: Beware URL tokens Redacting personal info Useful browser modes Tradeoffs: PNG vs JPG Watermark ethics Spotting fakes [Caption below the panel:] My class on screenshots was a big hit, although for some reason I only ever sold one copy of the digital textbook."
+        "number": 1863,
+        "url": "www.explainxkcd.com/wiki/images/3/31/screenshots.png",
+        "title": "Screenshots",
+        "alt": "For the final exam, you take a screenshot showing off all the work you've done in the class, and it has to survive being uploaded, thumbnailed, and re-screenshotted through a chain of social media sites.",
+        "transcript": "[The left side of the panel shows three images. The largest image is a screenshot of text with the middle section highlighted and margins and top and bottom rows marked with red lines and arrows. The two smaller images below are cropped versions of the screenshot in the first image: the left image has an incorrect \"squashed\" aspect ratio and a red X on it, while the right image has a correct aspect ratio and a green check mark.] [The right side of the panel:] Syllabus Highlighting: What & how much Aspect ratios Cropping: Pre- and post- Whitespace Screenshots vs links Catching the right GIF frame Snapchat and trust Embarrassing backround tabs Spellcheck's red outlines Security: Beware URL tokens Redacting personal info Useful browser modes Tradeoffs: PNG vs JPG Watermark ethics Spotting fakes [Caption below the panel:] My class on screenshots was a big hit, although for some reason I only ever sold one copy of the digital textbook."
+    },
+    "1864": {
+        "number": 1864,
+        "url": "www.explainxkcd.com/wiki/images/7/7d/city_nicknames.png",
+        "title": "City Nicknames",
+        "alt": "This place has so many demonyms. Northlanders. Fair Folk. Honey Barons. Lake Dwellers. Treasurers. Swamp Watchers. Dream Farmers. Wellfolk. Rockeaters. Forgotten Royals. Remote Clients. Barrow-Clerks. The People of Land and Sky.",
+        "transcript": "[Black Hat, Megan, and Ponytail are standing on a hill overlooking a city. The Gateway Arch is visible, as well as a number of skyscrapers in the skyline.]\nBlack Hat: Ah, New York. The Hot Tamale.\nMegan: This is St. Louis. Also, that's not\u2013\nBlack Hat: The Winged City. The Gold Trombone. Castleopolis.\nMegan: It's none of those."
+    },
+    "1865": {
+        "number": 1865,
+        "url": "www.explainxkcd.com/wiki/images/d/d9/wifi_vs_cellular.png",
+        "title": "Wifi vs Cellular",
+        "alt": "According to the cable company reps who keep calling me, it's because I haven't upgraded to the XTREME GIGABAND PANAMAX FLAVOR-BLASTED PRO PACKAGE WITH HBO, which is only $5 more per month for the first 6 months and five billion dollars per month after that.",
+        "transcript": "To get something to load on my phone, sometimes I have to Home wifi reliability Connect to wifi Cellular data reliability Turn off wifi 2000 2005 2010 2015 2020 It seems weird from a networking point of view, but sometime in the last few years this flipped for me."
     }
 }
