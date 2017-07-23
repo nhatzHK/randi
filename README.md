@@ -8,10 +8,10 @@ comic.
 
 ## Table of content
 
-* [Installation](https://github.com/nhatzHK/randi#Installation)
-* [Usage](https://github.com/nhatzHK/randi#Usage)
-* [Contributing](https://github.com/nhatzHK/randi#Contributing)
-  * [Beginner issues](https://github.com/nhatzHK/randi#Beginner))
+* [Installation](https://github.com/nhatzHK/randi#installation)
+* [Usage](https://github.com/nhatzHK/randi#usage)
+* [Contributing](https://github.com/nhatzHK/randi#contributing)
+  * [Beginner issues](https://github.com/nhatzHK/randi#beginner))
 
 ## Installation
 
