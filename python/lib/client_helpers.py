@@ -2,6 +2,7 @@ import asyncio
 import json
 import random
 import discord
+from urllib.request import urlopen
 
 def is_someone (msg):
     return True
@@ -92,26 +93,43 @@ async def parse_args (msg, prefix):
     args = [a for a in args if a] # Take a wild guess: you missed. Try harder.
     return args
 
-# Search for a comic in the index and return it's number
-# Highest: greatest number of words from the query
-#       and greatest weight in absolute 'comic': [weight, score]
-# We prefer a greater score
-# i.e query = "kek lol haha"
-# index: "kek": {'1': 1, '2': 1, '4': 3},
-#        "lol": {'2': 2, '5': 1, '9': 2},
-#       "haha": {'1': 2, '3': 4, '6': 1}
-# resulting score:  '1': [3, 2], '2': [3, 2], '3': [4, 1], '4': [3, 1]
-#                   '5': [1, 1], '6': [1, 1], '9': [2, 1]
-# We first select the comic with the greatest score:
-#   '1': [3, 2], '2': [3, 2]
-# Then select the ones with greated weight:
-#   '1': [3, 2], '2': [3, 2]
-# Return one of them (1|2)
+"""
+Search for a comic in the index and return it's number
+
+Highest: greatest number of words from the query
+and greatest weight in absolute 'comic': [weight, score]
+
+We prefer a greater score
+
+i.e query = "kek lol haha"
+index: "kek": {'1': 1, '2': 1, '4': 3},
+        "lol": {'2': 2, '5': 1, '9': 2},
+        "haha": {'1': 2, '3': 4, '6': 1}
+resulting score:  '1': [3, 2], '2': [3, 2], '3': [4, 1], '4': [3, 1]
+                '5': [1, 1], '6': [1, 1], '9': [2, 1]
+We first select the comic with the greatest score:
+    '1': [3, 2], '2': [3, 2]
+Then select the ones with greated weight:
+    '1': [3, 2], '2': [3, 2]
+Return one of them (1|2)
+"""
 async def get_xkcd (phrase, index, refs):
+    """
+    If the query is one string long and the string is a number
+    1. Look if a comic of this number is in the reference
+    2. If not in reference check for it online
+    If both failed proceed to normal search,
+    otherwise return the comic of the said number
+    """
     if len (phrase) == 1 and phrase [0].isdigit ():
         if int (phrase[0]) <=  len (refs):
-            return [0, phrase [0]]
+            return {'status': 0, 'comic': refs[phrase[0]]}
+        else:
+            online_check = await get_online_xkcd(number = phrase[0])
+            if online_check['status'] is 0:
+                return online_check
 
+    # Real search starts here
     matched = dict ()
     score = dict ()
     for word in phrase:
@@ -127,16 +145,18 @@ async def get_xkcd (phrase, index, refs):
         max_weight = a [max (a, key = lambda x: a[x]['weight'])]['weight']
         b = {x: a[x] for x in a if a[x]['weight'] == max_weight}
         
-        return [0, random.choice (list(b.keys()))]
+        return {'status': 0, 'comic': refs[random.choice (list(b.keys()))]}
     else:
-        return [-1]
+        return {'status': -1}
 
-# a: dict, b: dict
-# for each key in b:
-#   if the key is in a:
-#       add their value
-#   else: 
-#       a[key] = b[key], aka create the key in a with the same  value as in b
+"""
+a: dict, b: dict
+for each key in b:
+    if the key is in a:
+        add their value
+    else: 
+        a[key] = b[key], aka create the key in a with the same  value as in b
+"""
 async def combine (a, b):
     bk = list (b.keys ())
     for k in bk:
@@ -208,11 +228,11 @@ async def get_online_xkcd(number = 0):
     else:
         url = 'https://xkcd.com/{}/info.0.json'.format (number)
 
-    response = {'status': 0, 'response': ""}
+    response = {'status': 0, 'comic': ""}
     
     try:
         online_comic = urlopen(url)
-        response['comic'] = json.loads (latest.read())
+        response['comic'] = json.loads (online_comic.read ())
     except:
         response['status'] = -1
     
