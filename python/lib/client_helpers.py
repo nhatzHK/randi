@@ -231,8 +231,8 @@ async def get_online_xkcd(number = 0):
     response = {'status': 0, 'comic': ""}
     
     try:
-        online_comic = urlopen(url)
-        response['comic'] = json.loads (online_comic.read ())
+        online_comic = urlopen(url).read ()
+        response['comic'] = json.loads (online_comic.decode('utf-8'))
     except:
         response['status'] = -1
     
