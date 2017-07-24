@@ -157,14 +157,26 @@ async def search (q, index, refs, bl):
     return await get_xkcd (qlist, index, refs)
 
 async def create_embed (comic):
+    #FIXME: Issue #11 
+    if 'url' in list (comic.keys()):
+        img_url = comic['url']
+        img_url = "https://" + img_url
+    else:
+        img_url = comic['img']
+    
+    if 'number' in list (comic.keys ()):
+        comic_number = comic['number']
+    else:
+        comic_number = comic['num']
+
     embed_comic = discord.Embed \
-            (title = '{}: {}'.format (comic['number'], comic['title']), \
-            colour = discord.Colour(0x00ff00), \
-            url = 'https://{}'.format (comic['url']))
+            (title = '{}: {}'.format (comic_number, comic['title']), \
+            colour = discord.Colour(0x00ff00), url = img_url)
 
     embed_comic.set_footer (text = '{}'.format (comic['alt']))
-    embed_comic.set_image (url = 'https://{}'.format (comic['url']))
-    embed_comic.set_author (name = 'xkcd', url = 'https://xkcd.com')
+    embed_comic.set_image (url = img_url)
+    embed_comic.set_author (name = 'xkcd', \
+            url = 'https://xkcd.com/{}'.format(comic_number))
 
     return embed_comic
 
@@ -172,6 +184,8 @@ async def random_embed (refs):
     return await create_embed \
             (refs [random.choice (list (refs.keys()))])
 
+#FIXME: This is some kind of a special madness, I don't remember having
+#coded while drunk
 async def report_embed (msg, report):
     t = 'Report -> {}'.format (report['type'])
     c = report['color']
@@ -187,3 +201,19 @@ async def report_embed (msg, report):
     embed_report = discord.Embed (title = t, description = d, colour = c)
 
     return embed_report
+
+async def get_online_xkcd(number = 0):
+    if number is 0:
+        url ='https://xkcd.com/info.0.json'
+    else:
+        url = 'https://xkcd.com/{}/info.0.json'.format (number)
+
+    response = {'status': 0, 'response': ""}
+    
+    try:
+        online_comic = urlopen(url)
+        response['comic'] = json.loads (latest.read())
+    except:
+        response['status'] = -1
+    
+    return response

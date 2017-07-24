@@ -103,8 +103,16 @@ async def on_message (message):
             embed_comic = await CLIENT.random_embed (xkcd_refs)
             await Wame.send_message (message.channel, embed = embed_comic)
         elif command == 'latest':
-            embed_comic = await CLIENT.create_embed \
-                    (xkcd_refs[str(max(list(map(int, xkcd_refs))))])
+            local_latest = max(list(map(int, xkcd_refs)))
+            online_latest = await CLIENT.get_online_xkcd ()
+            
+            if online_latest['status'] == 0 and \
+                    local_latest < int(online_latest['comic']['num']):
+                embed_comic = await \
+                        CLIENT.create_embed(online_latest['comic'])
+            else:
+                embed_comic = await \
+                        CLIENT.create_embed (xkcd_refs[local_latest])
             await Wame.send_message (message.channel, embed = embed_comic)
         elif command == 'report':
             bug_channel = Wame.get_channel (wame_config['report_channel'])
