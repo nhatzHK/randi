@@ -60,7 +60,8 @@ async def on_ready ():
 @Wame.event
 async def on_message (message):
     if not message.content.startswith (wame_config['prefix']):
-        pass
+        if Wame.user.mentioned_in(message):
+            await Wame.send_message (message.channel, embed = wame_help)
     else:
         args = await CLIENT.parse_args (message.content, wame_config['prefix'])
         command = args[0]
