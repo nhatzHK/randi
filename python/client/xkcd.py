@@ -6,20 +6,22 @@ import json
 import random
 
 PATH = dict ()
-if (sys.argv [1]):
-    try:
-        with open (sys.argv [1]) as path_file:
-            PATH = json.load (path_file)
-    except:
-        print ('Unable to open file: {}'.format (sys.argv [1]))
-        exit (2)
-else:
-    print ('Usage python xkcd.py /path/to/path.json')
+try:
+    with open (sys.argv [1]) as path_file:
+        PATH = json.load (path_file)
+except IndexError: #FileNotFoundError
+    print ('Usage: python {} path/to/xkcd.path.json.priv'.format (sys.argv [0]))
     exit (1)
-
+except FileNotFoundError:
+    print ('Unable to open file: {}'.format (sys.argv[1]))
+    exit (2)
 
 sys.path.insert (0, PATH['lib'])
-import client_helpers as CLIENT
+try:
+    import client_helpers as CLIENT
+except ModuleNotFoundError:
+    print ('Error: Module client_helpers not found in path.')
+    exit (2))
 
 JSON = PATH['json']
 # Yep you should rename your config.json and append priv to it
