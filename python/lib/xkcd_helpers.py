@@ -1,3 +1,13 @@
+import urllib.error
+from urllib.request import Request, urlopen
+from bs4 import BeautifulSoup
+import bs4.element
+
+EXPLAIN_URL = "http://www.explainxkcd.com/wiki/index.php"
+
+INC_STR = "This transcript is incomplete. Please help editing it! Thanks."
+
+
 #==============================================================================#
 #==============================================================================#
 
@@ -194,3 +204,76 @@ def removeNoise (s):
     regex = re.compile (".*?\[(.*?)\]")
     clean = re.sub (regex, "", s)
     return clean
+
+#==============================================================================#
+#==============================================================================#
+
+# Get the html for a comic from the explainxkcd website
+# Extract the transcript from the text
+# Check if the transcript is mark as incomplete
+#   if yes, mark it as so locally (for later updates)
+# Returns a dictionary (result)
+# If an error occured the status is not 0 and the error is passed in the error
+# field of the returned dictionary
+
+def get_transcript (number=''):
+    result = {'status': 0, 'error': '', 'num': number, 'tr': '', 'complete': 0}
+    request = Request('{}/{}'.format(EXPLAIN_URL, number),\
+            headers={'User-Agent': 'Mozilla/5.0'})
+    try:
+        # Get page and create xml tree
+        raw = urlopen(request).read ()
+        soup = BeautifulSoup (raw, 'html.parser')
+        #return soup
+        # Check if the transcript is complete
+        result['complete'] = transcript_is_complete(soup)
+        
+        # Retrieve transcript
+        tr_i = soup.select("#Transcript")[0].find_next()
+        done = False
+        transcript = []
+        while not done:
+            if type(tr_i) is bs4.element.NavigableString:
+                transcript.append(tr_i)
+            elif type(tr_i) is bs4.element.Comment:
+                pass
+            else:
+                transcript.append(tr_i.text)
+                
+            tr_i = tr_i.next_sibling
+            
+            if tr_i.name == 'h2' or tr_i.name == 'span':
+                done = True
+        
+        transcript = ' '.join(transcript)
+        transcript = ' '.join(transcript.split(INC_STR)) 
+        result['tr'] = transcript
+        return result
+    except urllib.error.HTTPError as uehe: # shrug
+        result['status'] = -1
+        result['error'] = uehe
+        return result
+    except IndexError as ie: # If there is no #Transript id on the page
+        result['status'] = -2
+        result['error'] = ie
+        return result
+
+#==============================================================================##==============================================================================#
+# Check if a transcript is marked as incomplete
+# if yes: returns 1
+# else returns 0
+# if transcript isn't present at all, returns 2
+def transcript_is_complete(soup):
+    try:
+        transcript = soup.select("#Transcript")[0]
+        next_tag = transcript.find_next ()
+        if next_tag.name == 'table':
+            if len(next_tag.text.split(INC_STR)) > 0:
+                return 1
+    
+        return 0
+    except IndexError as ie: # Comic has no transcript
+        return 2
+
+#==============================================================================#
+#==============================================================================#
