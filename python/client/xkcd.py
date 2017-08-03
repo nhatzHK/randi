@@ -62,7 +62,8 @@ async def on_ready ():
 @Wame.event
 async def on_message (message):
     if not message.content.startswith (wame_config['prefix']):
-        pass
+        if Wame.user.mentioned_in(message):
+            await Wame.send_message (message.channel, embed = wame_help)
     else:
         args = await CLIENT.parse_args (message.content, wame_config['prefix'])
         command = args[0]
@@ -77,13 +78,13 @@ async def on_message (message):
                 embed_comic = await CLIENT.random_embed (xkcd_refs)
                 await Wame.edit_message (tmp, ' ', embed = embed_comic)
             else:
-                comic = await CLIENT.search \
+                result = await CLIENT.search \
                     (' '.join(args), xkcd_index, xkcd_refs, blk_list)
                 # 0 == comic found
-                if comic[0] == 0:
+                if result['status'] == 0:
                     # Create embed
                     embed_comic = await \
-                            CLIENT.create_embed (xkcd_refs [comic [1]])
+                            CLIENT.create_embed (result['comic'])
                     await Wame.edit_message (tmp, ' ', embed = embed_comic)
                 else:
                     # It hasn't been found, too bad
@@ -105,8 +106,15 @@ async def on_message (message):
             embed_comic = await CLIENT.random_embed (xkcd_refs)
             await Wame.send_message (message.channel, embed = embed_comic)
         elif command == 'latest':
-            embed_comic = await CLIENT.create_embed \
-                    (xkcd_refs[str(max(list(map(int, xkcd_refs))))])
+            online_latest = await CLIENT.get_online_xkcd ()
+            
+            if online_latest['status'] is 0: 
+                embed_comic = await \
+                        CLIENT.create_embed(online_latest['comic'])
+            else:
+                local_latest = xkcd_refs[str(max(list(map(int, xkcd_refs))))]
+                embed_comic = await \
+                        CLIENT.create_embed (local_latest)
             await Wame.send_message (message.channel, embed = embed_comic)
         elif command == 'report':
             bug_channel = Wame.get_channel (wame_config['report_channel'])
