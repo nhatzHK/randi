@@ -2,6 +2,7 @@ import urllib.error
 from urllib.request import Request, urlopen
 from bs4 import BeautifulSoup
 import bs4.element
+import json
 
 EXPLAIN_URL = "http://www.explainxkcd.com/wiki/index.php"
 
@@ -269,11 +270,34 @@ def transcript_is_complete(soup):
         next_tag = transcript.find_next ()
         if next_tag.name == 'table':
             if len(next_tag.text.split(INC_STR)) > 0:
-                return 1
+                return -1
     
         return 0
     except IndexError as ie: # Comic has no transcript
-        return 2
+        return -2
+    except:
+        return -3
 
 #==============================================================================#
 #==============================================================================#
+
+# Duplicated from lib/client
+def get_xkcd(number = 0):
+    if number is 0:
+        url ='https://xkcd.com/info.0.json'
+    else:
+        url = 'https://xkcd.com/{}/info.0.json'.format (number)
+
+    response = {'status': 0, 'error': '', 'comic': ""}
+
+    try:
+        online_comic = urlopen(url).read ()
+        response['comic'] = json.loads (online_comic.decode('utf-8'))
+    except urllib.error.HTTPError:
+        response['status'] = -1
+    except:
+        response['status'] = -2
+
+    return response
+
+#==============================================================================##==============================================================================#

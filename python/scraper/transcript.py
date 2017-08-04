@@ -7,12 +7,8 @@ import sys
 sys.path.insert (0, '/home/nhatz/Code/GitHub/randi/python/lib')
 PROMPT = "[xkcd Parser]"
 PREPATH = '/home/nhatz/Code/GitHub/randi/'
-EXPLAIN = 'http://www.explainxkcd.com/wiki/index.php/'
 
 REFS = PREPATH + 'json/xkcd.references.json'
-COMMON = PREPATH + 'json/xkcd.common.json'
-
-LINK = 'www.explainxkcd.com'
 
 try:
     print (PROMPT + " Loading dependencies.")
@@ -20,7 +16,7 @@ try:
     import json
     import xkcd_helpers
     print (PROMPT + " Dependencies loaded.")
-except:
+except ModuleNotFoundError:
     print (PROMPT + " Missing or broke dependencies.\n \
             \tMake sure:\n \
                     \t\txkcd_helper.py exists in ./\n \
@@ -31,22 +27,13 @@ except:
 # FILE LOADING                                                                 #
 #==============================================================================#
 
-black_list = list ()
+XKCD = dict ()
 try:
-    print (PROMPT + " Loading black list")
-    with open (COMMON) as infile:
-        black_list = json.load (infile)
-    print (PROMPT + " Blacklist loaded.")
-except:
-    xkcd_helpers.fileNotFound (PROMPT, COMMON)
-
-comic = dict ()
-try:
-    print (PROMPT + " Loading comics' references")
+    print (PROMPT + " Loading references")
     with open (REFS) as infile:
-        comic = json.load (infile)
-    print (PROMPT + " Comics' references loaded")
-except:
+        XKCD = json.load (infile)
+    print (PROMPT + " References loaded")
+except FileNotFoundError:
     xkcd_helpers.fileNotFound (PROMPT, REFS)
 
 #==============================================================================#
@@ -74,55 +61,28 @@ else:
 # FETCHING                                                                     #
 #==============================================================================#
 
-try:
-    print (PROMPT + " Opening browser")
-    bruh = Browser ()
-    print (PROMPT + " Browser opened.")
-except:
-    print (PROMPT + " Failed to start the browser.")
-    exit (4)
-
 print (PROMPT + " Starting fetch...")
-
 # last + 1 because we need to access the last element
 for i in range(args [1], args [2] + 1):
-    url = EXPLAIN + str (i)
-    print (PROMPT + " Fetching: " + url)
-    fetch = xkcd_helpers.fetch (bruh, url)
-    if (fetch [0] == 0):
-        print (PROMPT + " Requested elements retrieved")
-        print (PROMPT + " Indexing comic #" + str (i) )
+        print ('{} Retrieving {}'.format(PROMPT, i))
+        temp_xkcd = xkcd_helpers.get_xkcd(i)
+        XKCD[i] = {\
+                'comic': temp_xkcd['comic'], \
+                'stat_com': {\
+                'status': temp_xkcd['status'], 'error': temp_xkcd['error']}, \
+                'stat_tr': {'status': 0, 'error': '', 'complete': 0}}
         
-        comic[i] = {\
-                "number": i, \
-                "url": "wwww.xkcd.com/" + str (i), \
-                "title": fetch [1], \
-                "alt": fetch [2], \
-                "transcript": fetch [3], \
-                "url": LINK + fetch[4] \
-                }
-        print (PROMPT + " Comic " + str(i) + " succesfully referenced.")
+        if temp_xkcd['status'] != 0: 
+            XKCD[i]['stat_tr'] = \
+                    {'status': -3, 'error': 'xkcd', 'complete': -3}
+        elif not temp_xkcd['comic']['transcript']:
+            temp_tr = xkcd_helpers.get_transcript(i)
+            XKCD[i]['comic']['transcript'] = temp_tr['tr']
+            XKCD[i]['stat_tr']['status'] = temp_tr['status']
+            XKCD[i]['stat_tr']['error'] = temp_tr['error']
+        
+        print ('{} Comic {} referenced.'.format(PROMPT, i))
 
-        # Uncomment for debugging
-        # print (comic)
-    
-    elif (fetch[0] == -1):
-        print (PROMPT + \
-                " Couldn't retrieve the requested elements in webpage:\n \
-                \t[URL]: " + url)
-    
-    elif (fetch[0] == -2):
-        print (PROMPT + " Unknown error. Stoping script.")
-        bruh.quit ()
-        exit (5)
-    
-    else:
-        print (PROMPT + \
-                " Unexpected return code from fetching. Stoping script.")
-        bruh.quit ()
-        exit (6)
-
-bruh.quit ()
 
 #==============================================================================#
 # FILES SAVING                                                                 #
@@ -131,7 +91,7 @@ bruh.quit ()
 try:
     print (PROMPT + " Saving comic references in " + REFS)
     with open (REFS, 'w') as outfile:
-        json.dump (comic, outfile, indent = 4)
+        json.dump (XKCD, outfile, indent = 4)
     print (PROMPT + " Comic references succesfully saved.")
 except:
     print (PROMPT + " Something went wrong while saving the comic file. \
