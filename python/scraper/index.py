@@ -15,16 +15,24 @@ index = dict ()
 refs = CLIENT.loadJson (REFS)
 black_list = CLIENT.loadJson (BLACK_LIST)
 
-for comic in refs:
-    # Retrieve the comic info from the references
-    title = XKCD.removePunk (refs[comic]['title'])
-    alt = XKCD.removePunk (refs[comic]['alt'])
-    transcript = XKCD.removePunk \
-            (refs[comic]['transcript'])
-    # Remove noise from transcript [that's noise]
+for i in list(refs.keys ()):
+    transcript = str ()
+    title = str ()
+    alt = str ()
+    complete_str = str ()
+
+    #FIXME: I really need to fix these magic numbers
+    if refs[i]['stat_com']['status'] == 0:
+        # Retrieve the comic info from the references
+        title refs[i]['comic']['title']
+        alt = refs[i]['comic']['alt']
+        if refs[i]['stat_tr']['status'] >= -1:
+            transcript = XKCD.removeNoise (refs[i]['comic']['transcript'])
+
+    complete_str = XKCD.removePunk('{} {} {}'.format(title + alt + transcript)) 
+
     # Record the comic in the index
-    XKCD.indexComic ('{} {} {}'.format (title, alt, transcript), \
-            refs[comic]['number'], index, black_list)
+    XKCD.indexComic (complete_str, i, index, black_list)
 
 # save file
 with open (INDEX, 'w') as outfile:

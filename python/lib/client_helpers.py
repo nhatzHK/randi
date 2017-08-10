@@ -176,27 +176,17 @@ async def search (q, index, refs, bl):
     qlist = [x for x in qlist if x and not (x in bl or x == ' ')]
     return await get_xkcd (qlist, index, refs)
 
-async def create_embed (comic):
-    #FIXME: Issue #11 
-    if 'url' in list (comic.keys()):
-        img_url = comic['url']
-        img_url = "https://" + img_url
-    else:
-        img_url = comic['img']
+async def create_embed (xkcd):
+    comic = xkcd['comic']
     
-    if 'number' in list (comic.keys ()):
-        comic_number = comic['number']
-    else:
-        comic_number = comic['num']
-
     embed_comic = discord.Embed \
-            (title = '{}: {}'.format (comic_number, comic['title']), \
-            colour = discord.Colour(0x00ff00), url = img_url)
+            (title = '{}: {}'.format (comic['num'], comic['title']), \
+            colour = discord.Colour(0x00ff00), url = comic['img'])
 
     embed_comic.set_footer (text = '{}'.format (comic['alt']))
-    embed_comic.set_image (url = img_url)
+    embed_comic.set_image (url = comic['img'])
     embed_comic.set_author (name = 'xkcd', \
-            url = 'https://xkcd.com/{}'.format(comic_number))
+            url = 'https://xkcd.com/{}'.format(comic['num']))
 
     return embed_comic
 

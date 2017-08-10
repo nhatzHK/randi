@@ -1,3 +1,14 @@
+import urllib.error
+from urllib.request import Request, urlopen
+from bs4 import BeautifulSoup
+import bs4.element
+import json
+
+EXPLAIN_URL = "http://www.explainxkcd.com/wiki/index.php"
+
+INC_STR = "This transcript is incomplete. Please help editing it! Thanks."
+
+
 #==============================================================================#
 #==============================================================================#
 
@@ -21,33 +32,6 @@ def extractTitle (t):
         title = title [1:]
     # Return the string minus the first char which is a whitespace
     return title [1:]
-
-#==============================================================================#
-#==============================================================================#
-
-# Fetches a webpage
-# Returns the content of the css elements 'dl' and the xpath '//img@/alt
-# Return codes:
-#  0 -> success; 
-# -1 -> requested elements not found; 
-# -2 -> error with the browser
-def fetch (bruh, url):
-    transcript, alt, title = None, None, None
-    try:
-        bruh.visit (url)
-        transcript = bruh.find_by_css ('dl').value
-        # This might fail with 'phantomjs'
-        alt = bruh.find_by_xpath ('//img/@alt').value
-        title = extractTitle (bruh.find_by_css ('title').value)
-        link = bruh.find_by_xpath ('//img/@src').value
-        return [0, title, alt, transcript, link]
-    except:
-        # why am I writing pseudocode
-        if (transcript is None or alt is None or title is None):
-            return list [-1]
-        # what could go wrong
-        else:
-            return list [-2]
 
 #==============================================================================#
 #==============================================================================#
@@ -95,21 +79,23 @@ def getArgs (args):
 def removePunk (p):
     p = p.replace('\n', ' ')
     phrase = str ()
-    for i in range (len (p)):
-        if p[i].isalpha () or p[i].isdigit ():
-            phrase += p[i]
-        elif p[i] == ' ':
-            if i - 1 > 0 and i + 1 < len (p):
-                if p[i - 1].isalpha ():
-                    phrase += p[i]
+    for index, char in enumerate(p):
+        if char.isalpha () or char.isdigit ():
+            phrase += char
+        elif char == ' ':
+            # If in the middle of the string
+            if index - 1 > 0 and index + 1 < len (p):
+                if p[index - 1].isalpha ():
+                    phrase += char
                 else:
                    phrase += ' '
             else:
                 phrase += ' '
-        elif p[i] == '-':
-            if i - 1 > 0 and i + 1 < len (p):
-                if p[i - 1].isalpha () and p[i + 1].isalpha ():
-                    phrase += p[i]
+        elif char == '-':
+            if index - 1 > 0 and index + 1 < len (p):
+                # If in the middle of a word
+                if p[index - 1].isalpha () and p[index + 1].isalpha ():
+                    phrase += char
                 else:
                     phrase += ' '
             else:
@@ -191,6 +177,113 @@ def indexComic (comic, comic_number, index, black_list):
 # And return "haha lol  D lmao"
 def removeNoise (s):
     import re
-    regex = re.compile (".*?\[(.*?)\]")
-    clean = re.sub (regex, "", s)
+    pattern_list = ["\[\[(.*?)\]\]", "{{(.*?)}}", "\[(.*?)\]"]
+    clean = s
+    
+    for pattern in pattern_list:
+        regex = re.compile(pattern)
+        clean = re.sub (regex, "", clean)
+    
     return clean
+
+#==============================================================================#
+#==============================================================================#
+
+# Get the html for a comic from the explainxkcd website
+# Extract the transcript from the text
+# Check if the transcript is mark as incomplete
+#   if yes, mark it as so locally (for later updates)
+# Returns a dictionary (result)
+# If an error occured the status is not 0 and the error is passed in the error
+# field of the returned dictionary
+
+def get_transcript (number=''):
+    result = {'status': 0, 'error': '', 'num': number, 'tr': '', 'complete': 0}
+    request = Request('{}/{}'.format(EXPLAIN_URL, number),\
+            headers={'User-Agent': 'Mozilla/5.0'})
+    try:
+        # Get page and create xml tree
+        raw = urlopen(request).read ()
+        soup = BeautifulSoup (raw, 'html.parser')
+        #return soup
+        # Check if the transcript is complete
+        result['complete'] = transcript_is_complete(soup)
+        
+        # Retrieve transcript
+        tr_i = soup.select("#Transcript")[0].find_next()
+        done = False
+        transcript = []
+        while not done:
+            if type(tr_i) is bs4.element.NavigableString:
+                transcript.append(tr_i)
+            elif type(tr_i) is bs4.element.Comment:
+                pass
+            else:
+                transcript.append(tr_i.text)
+                
+            tr_i = tr_i.next_sibling
+            
+            if tr_i.name == 'h2' or tr_i.name == 'span':
+                done = True
+        
+        transcript = ' '.join(transcript)
+        transcript = ' '.join(transcript.split(INC_STR)) 
+        result['tr'] = transcript
+        return result
+    except urllib.error.HTTPError as uehe: # shrug
+        result['status'] = -1
+        result['error'] = uehe
+        return result
+    except IndexError as ie: # If there is no #Transript id on the page
+        result['status'] = -2
+        result['error'] = ie
+        return result
+    except IOError as ioe: # if urllib can't open the specified url
+        result['status'] = -3
+        result['error'] = ioe
+        return result
+
+#==============================================================================##==============================================================================#
+# Check if a transcript is marked as incomplete
+# if yes: returns 1
+# else returns 0
+# if transcript isn't present at all, returns 2
+def transcript_is_complete(soup):
+    try:
+        transcript = soup.select("#Transcript")[0]
+        next_tag = transcript.find_next ()
+        if next_tag.name == 'table':
+            if len(next_tag.text.split(INC_STR)) > 0:
+                return -1
+    
+        return 0
+    except IndexError: # Comic has no transcript
+        return -2
+    except:
+        return -3
+
+#==============================================================================#
+#==============================================================================#
+
+# Duplicated from lib/client
+def get_xkcd(number = 0):
+    if number is 0:
+        url ='https://xkcd.com/info.0.json'
+    else:
+        url = 'https://xkcd.com/{}/info.0.json'.format (number)
+
+    response = {'status': 0, 'error': '', 'comic': ""}
+
+    try:
+        online_comic = urlopen(url).read ()
+        response['comic'] = json.loads (online_comic.decode('utf-8'))
+    except urllib.error.HTTPError:
+        response['status'] = -1
+    except IOError:
+        response['status'] = -2
+    except:
+        response['status'] = -3
+
+    return response
+
+#==============================================================================##==============================================================================#
