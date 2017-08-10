@@ -21,7 +21,7 @@ try:
     import client_helpers as CLIENT
 except ModuleNotFoundError:
     print ('Error: Module client_helpers not found in path.')
-    exit (2))
+    exit (2)
 
 JSON = PATH['json']
 # Yep you should rename your config.json and append priv to it
@@ -110,9 +110,9 @@ async def on_message (message):
             
             if online_latest['status'] is 0: 
                 embed_comic = await \
-                        CLIENT.create_embed(online_latest['comic'])
+                        CLIENT.create_embed(online_latest)
             else:
-                local_latest = xkcd_refs[str(max(list(map(int, xkcd_refs))))]
+                local_latest = xkcd_refs[str(max(list(xkcd_refs.keys ())))]
                 embed_comic = await \
                         CLIENT.create_embed (local_latest)
             await Wame.send_message (message.channel, embed = embed_comic)
