@@ -4,11 +4,13 @@
 # DEPENDENCIES LOADING                                                         #
 #==============================================================================#
 import sys
-sys.path.insert (0, '/home/nhatz/Code/GitHub/randi/python/lib')
+import traceback
+sys.path.insert (0, '/home/nhatz/Code/GitHub/bots/randi/python/lib')
 PROMPT = "[xkcd Parser]"
 PREPATH = '/home/nhatz/Code/GitHub/randi/'
 
-REFS = PREPATH + 'json/xkcd.references.json'
+#REFS = PREPATH + 'json/xkcd.references.json'
+REFS = 'xkcd.references.json'
 
 try:
     print (PROMPT + " Loading dependencies.")
@@ -21,6 +23,7 @@ except ModuleNotFoundError:
             \tMake sure:\n \
                     \t\txkcd_helper.py exists in ./\n \
                     \t\tsplinter is installed")
+    traceback.print_exc()
     exit (1)
 
 #==============================================================================#
@@ -35,6 +38,7 @@ try:
     print (PROMPT + " References loaded")
 except FileNotFoundError:
     xkcd_helpers.fileNotFound (PROMPT, REFS)
+    traceback.print_exc()
 
 #==============================================================================#
 # ARGUMENT CHECK                                                               #
@@ -91,11 +95,14 @@ for i in range(args [1], args [2] + 1):
 try:
     print (PROMPT + " Saving comic references in " + REFS)
     with open (REFS, 'w') as outfile:
+        f = open(REFS, 'w').close()
         json.dump (XKCD, outfile, indent = 4)
+        
     print (PROMPT + " Comic references succesfully saved.")
 except:
     print (PROMPT + " Something went wrong while saving the comic file. \
             \n\tThat's not to bad.")
+    traceback.print_exc()
 
 #==============================================================================#
 print (PROMPT + " Done.")
