@@ -44962,5 +44962,317 @@
             "error": "",
             "complete": 0
         }
+    },
+    "1875": {
+        "comic": {
+            "month": "8",
+            "num": 1875,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "Computers vs Humans",
+            "transcript": "[A laptop sits on a desk with office chair while Cueball is sitting with his back towards the desk in a sofa while he is reading from something in his hands, a book or a smartphone.]\nLaptop: We computers finally beat you humans at Go.\nCueball: Yup.\nLaptop: Sucks for you!\nCueball: Mm hmm.\n \n [Same setting in a frameless panel.]\nLaptop: What's next? Which quintessentially human thing should we learn to do better than you?\nCueball: Being too cool to care about stuff.\n \n [Same setting.]\nLaptop: Okay, I'll apply 10,000 years of CPU time to the initial\u2014\nCueball: Sounds like you've already lost.\nLaptop: Damn. This is hard.\nCueball: Is it? Never noticed.\n \n \n \n",
+            "alt": "It's hard to train deep learning algorithms when most of the positive feedback they get is sarcastic.",
+            "img": "https://imgs.xkcd.com/comics/computers_vs_humans.png",
+            "title": "Computers vs Humans",
+            "day": "11"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1876": {
+        "comic": {
+            "month": "8",
+            "num": 1876,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "Eclipse Searches",
+            "transcript": "[Cueball walks up to Megan while holding his smartphone up in his hand. Megan sits in an office chair in front of her desk with an open laptop on it. She turns her head towards him. A footnote to Cueball's speech is at the bottom right of the panel.]\nCueball: Have you seen this cool map* showing how Google searches for \"eclipse\" trace the eclipse's path?\nMegan: Yeah!\nMegan: But you know what else I noticed?\nCueball: What?\nFootnote: *wapo.st/2vkgIBv\n \n [Two panels are on top of each other. In the smaller top panel a colored graph is shown with a blue growing graph and a steeper growing red graph above it. Both are labeled. The x-axis (a black line) has labels and arrows below it in red and blue to indicate time periods. Text above the graph:]\nSearches for \"eclipse\" in the weeks before the eclipse are outpacing searches for \"election\" in the weeks before the 2016 election.\nRed line: Eclipse\nBlue line: Election\nRed x-axis labels: 2017 \u2192|\u2190 July \u2192|\u2190 August \u2192 \nBlue x-axis labels: 2016 - September \u2192|\u2190 October \u2192|\u2190 \n \n [Behind the top panel is a second larger panel slightly lower end more to the right. The visible part at the bottom of this panel is showing the same line graphs with the one from the election going past the election day. The x-axis labels ranges over a later time. The blue graph has a huge peak at the election day, visible in the part of the panel to the right of the top panel) and this date is written in a blue dot on the label. Similar the date of the Eclipse is written in a red dot. The red graph above the blue still ends in dots before the expected peak, as it is in the future.]\nRed line: Eclipse\nBlue line: Election\nRed x-axis labels: 2017 - July \u2192|\u2190 August 21 \u2192 \nBlue x-axis labels: 2016 - October \u2192|\u2190 November 8 \u2192 \n \n [Megan with her hands on the laptop and Cueball are both looking at the laptop. Beat panel.]\n \n [Cueball stands again and Megan has taken her hands down from the laptop.]\nCueball: This is gonna be bad, isn't it?\nMegan: If you're planning to be on the road next Monday, bring water.\n \n",
+            "alt": "There were traffic jams for the eclipses in 1970 and 1979, and that was *before* we had the potential for overnight viral social media frenzies.",
+            "img": "https://imgs.xkcd.com/comics/eclipse_searches.png",
+            "title": "Eclipse Searches",
+            "day": "14"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1877": {
+        "comic": {
+            "month": "8",
+            "num": 1877,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "Eclipse Science",
+            "transcript": "[Hairy is speaking into a microphone while interviewing Megan.]\nHairy: Tell us, are you scientists excited for the eclipse?\nMegan: Sure, lots of people are!\n \n [Zoom in on Megans head.]\nHairy (off-panel): Is this a big moment for science?\nMegan: It's a big moment for the sky.\n \n [Same setting as first panel in a wider panel.]\nHairy: Are people really excited enough about science to travel to see it?\nMegan: Honestly, it's not that scientific. I mean, it's cool if you're into astronomy, but it's also cool if you're, like, aware of the sun.\n \n [Same setting.]\nHairy: But there's lots of science involved.\nMegan: I guess? There's lots of science involved in the Olympics, but you don't need to be a scientist to watch.\n \n [Megan holds a hand out towards Hairy.]\nMegan: It's not like the concept is all that arcane or mathematical. It's a thing going in front of another thing.\n \n [Zoom in on Megan holding both arms out.]\nHairy (off-panel): Then why are you so excited?\nMegan: I'm excited because it's a nearly once-in-a-lifetime chance to watch the sun go dark, hear birds freak out, and see a glowing ring appear in the sky with a sunset on every horizon.\n \n [Back to same setting as in the first panel.]\nHairy\u00a0: Will you be making any scientific observations?\nMegan: I will be like, \"Holy shit, look at the sky.\"\nMegan: Maybe also \"This is so cool.\"\nMegan: We'll see!\n \n \n \n",
+            "alt": "I was thinking of observing stars to verify Einstein's theory of relativity again, but I gotta say, that thing is looking pretty solid at this point.",
+            "img": "https://imgs.xkcd.com/comics/eclipse_science.png",
+            "title": "Eclipse Science",
+            "day": "16"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1878": {
+        "comic": {
+            "month": "8",
+            "num": 1878,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "Earth Orbital Diagram",
+            "transcript": "\n\n \n\n  \n \n [An orbital map of the Earth is shown. The Sun is in the center, the Earth is at the right bottom, and the Moon is left below the Earth.]\nWhy isn't there an eclipse every month?\nThis is a common question! The answer is made clear by a quick look at the Earth's orbital diagram:\n \n [Label Sun:]\nSolar plexus\n \n [Label on the Earth's plane:]\nSagittal plane\n \n [Labels on Earth's orbit (beginning at the Earth counterclockwise):]\nPerihelix, Declension, Obsequity, Hypothecate, Enceliopsis, Equinox (Solstice in British English)\n \n [Two angles in the plane are labeled as:]\nDeterminant of the date of Easter, Arctangent\n \n [The plane of the Moon is pictured in a small angle to the Earth's plane and named Astral Plane. The angle is presented between two lines (Greek Nu or Gamma and a double Greek Chi) and identified by a character that looks similar to a Greek Phi but with two vertical lines.]\n[The labels at the Moon's path are:]\nTropopause, Prolapse, Errata.\n \n [An arrow points to the Earth at the zero meridian on the equator. The label reads:]\nDimples of Venus\n \n \n \n",
+            "alt": "You shouldn't look directly at a partial eclipse because of the damage that can be caused by improperly aligning the solar-lunar orbital plane with the orbital bones around your eye.",
+            "img": "https://imgs.xkcd.com/comics/earth_orbital_diagram.png",
+            "title": "Earth Orbital Diagram",
+            "day": "18"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1879": {
+        "comic": {
+            "month": "8",
+            "num": 1879,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "Eclipse Birds",
+            "transcript": "[Cueball and Megan standing together looking to the right.]\nCueball: I heard that during an eclipse the birds all freak out.\nMegan: I guess we'll see!\n \n [Beat panel, the white background sky turns at the top slightly darker.]\n \n [As the sky turns to dusk sounds can be heard. It's written above Cueball and Megan inside squiggly bubbles.]\nChirp Chirp!\nChirp!\nPeep peep peep!\nSquawk!\n \n [The sky is now nearly dark, more at the top of the panel. The sounds continue, written in similar bubbles.]\nChirp!\nClank clank clank\nThe time is upon us!\nPeep!\nKachunk\nPrepare the blood cauldron!\nCueball: Wow.\nMegan: Isn't nature amazing?\n \n \n \n",
+            "alt": "'Hey! Put her down!' 'No, it's ok! The next chance for me to be carried to a blood cauldron isn't until 2024!'",
+            "img": "https://imgs.xkcd.com/comics/eclipse_birds.png",
+            "title": "Eclipse Birds",
+            "day": "21"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1880": {
+        "comic": {
+            "month": "8",
+            "num": 1880,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "Eclipse Review",
+            "transcript": "[A scatter plot with five labeled dots is drawn. The x-axis reads \"How cool it sounds like it would be\" and the y-axis is labeled with \"How cool it is to see in person\".]\n[Bottom left] Planetary conjunction\n[Bottom middle] Supermoon\n[Low left-center] Lunar eclipse\n[Low-center middle] Partial solar eclipse\n[Upper right, with a dotted arrow above it pointing up] Total solar eclipse\n \n \n \n",
+            "alt": "I watched from a beautiful nature reserve in central Missouri, and it was--without exaggeration--the coolest thing I've ever seen.",
+            "img": "https://imgs.xkcd.com/comics/eclipse_review.png",
+            "title": "Eclipse Review",
+            "day": "23"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1875": {
+        "comic": {
+            "month": "8",
+            "num": 1875,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "Computers vs Humans",
+            "transcript": "[A laptop sits on a desk with office chair while Cueball is sitting with his back towards the desk in a sofa while he is reading from something in his hands, a book or a smartphone.]\nLaptop: We computers finally beat you humans at Go.\nCueball: Yup.\nLaptop: Sucks for you!\nCueball: Mm hmm.\n \n [Same setting in a frameless panel.]\nLaptop: What's next? Which quintessentially human thing should we learn to do better than you?\nCueball: Being too cool to care about stuff.\n \n [Same setting.]\nLaptop: Okay, I'll apply 10,000 years of CPU time to the initial\u2014\nCueball: Sounds like you've already lost.\nLaptop: Damn. This is hard.\nCueball: Is it? Never noticed.\n \n \n \n",
+            "alt": "It's hard to train deep learning algorithms when most of the positive feedback they get is sarcastic.",
+            "img": "https://imgs.xkcd.com/comics/computers_vs_humans.png",
+            "title": "Computers vs Humans",
+            "day": "11"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1876": {
+        "comic": {
+            "month": "8",
+            "num": 1876,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "Eclipse Searches",
+            "transcript": "[Cueball walks up to Megan while holding his smartphone up in his hand. Megan sits in an office chair in front of her desk with an open laptop on it. She turns her head towards him. A footnote to Cueball's speech is at the bottom right of the panel.]\nCueball: Have you seen this cool map* showing how Google searches for \"eclipse\" trace the eclipse's path?\nMegan: Yeah!\nMegan: But you know what else I noticed?\nCueball: What?\nFootnote: *wapo.st/2vkgIBv\n \n [Two panels are on top of each other. In the smaller top panel a colored graph is shown with a blue growing graph and a steeper growing red graph above it. Both are labeled. The x-axis (a black line) has labels and arrows below it in red and blue to indicate time periods. Text above the graph:]\nSearches for \"eclipse\" in the weeks before the eclipse are outpacing searches for \"election\" in the weeks before the 2016 election.\nRed line: Eclipse\nBlue line: Election\nRed x-axis labels: 2017 \u2192|\u2190 July \u2192|\u2190 August \u2192 \nBlue x-axis labels: 2016 - September \u2192|\u2190 October \u2192|\u2190 \n \n [Behind the top panel is a second larger panel slightly lower end more to the right. The visible part at the bottom of this panel is showing the same line graphs with the one from the election going past the election day. The x-axis labels ranges over a later time. The blue graph has a huge peak at the election day, visible in the part of the panel to the right of the top panel) and this date is written in a blue dot on the label. Similar the date of the Eclipse is written in a red dot. The red graph above the blue still ends in dots before the expected peak, as it is in the future.]\nRed line: Eclipse\nBlue line: Election\nRed x-axis labels: 2017 - July \u2192|\u2190 August 21 \u2192 \nBlue x-axis labels: 2016 - October \u2192|\u2190 November 8 \u2192 \n \n [Megan with her hands on the laptop and Cueball are both looking at the laptop. Beat panel.]\n \n [Cueball stands again and Megan has taken her hands down from the laptop.]\nCueball: This is gonna be bad, isn't it?\nMegan: If you're planning to be on the road next Monday, bring water.\n \n",
+            "alt": "There were traffic jams for the eclipses in 1970 and 1979, and that was *before* we had the potential for overnight viral social media frenzies.",
+            "img": "https://imgs.xkcd.com/comics/eclipse_searches.png",
+            "title": "Eclipse Searches",
+            "day": "14"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1877": {
+        "comic": {
+            "month": "8",
+            "num": 1877,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "Eclipse Science",
+            "transcript": "[Hairy is speaking into a microphone while interviewing Megan.]\nHairy: Tell us, are you scientists excited for the eclipse?\nMegan: Sure, lots of people are!\n \n [Zoom in on Megans head.]\nHairy (off-panel): Is this a big moment for science?\nMegan: It's a big moment for the sky.\n \n [Same setting as first panel in a wider panel.]\nHairy: Are people really excited enough about science to travel to see it?\nMegan: Honestly, it's not that scientific. I mean, it's cool if you're into astronomy, but it's also cool if you're, like, aware of the sun.\n \n [Same setting.]\nHairy: But there's lots of science involved.\nMegan: I guess? There's lots of science involved in the Olympics, but you don't need to be a scientist to watch.\n \n [Megan holds a hand out towards Hairy.]\nMegan: It's not like the concept is all that arcane or mathematical. It's a thing going in front of another thing.\n \n [Zoom in on Megan holding both arms out.]\nHairy (off-panel): Then why are you so excited?\nMegan: I'm excited because it's a nearly once-in-a-lifetime chance to watch the sun go dark, hear birds freak out, and see a glowing ring appear in the sky with a sunset on every horizon.\n \n [Back to same setting as in the first panel.]\nHairy\u00a0: Will you be making any scientific observations?\nMegan: I will be like, \"Holy shit, look at the sky.\"\nMegan: Maybe also \"This is so cool.\"\nMegan: We'll see!\n \n \n \n",
+            "alt": "I was thinking of observing stars to verify Einstein's theory of relativity again, but I gotta say, that thing is looking pretty solid at this point.",
+            "img": "https://imgs.xkcd.com/comics/eclipse_science.png",
+            "title": "Eclipse Science",
+            "day": "16"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1878": {
+        "comic": {
+            "month": "8",
+            "num": 1878,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "Earth Orbital Diagram",
+            "transcript": "\n\n \n\n  \n \n [An orbital map of the Earth is shown. The Sun is in the center, the Earth is at the right bottom, and the Moon is left below the Earth.]\nWhy isn't there an eclipse every month?\nThis is a common question! The answer is made clear by a quick look at the Earth's orbital diagram:\n \n [Label Sun:]\nSolar plexus\n \n [Label on the Earth's plane:]\nSagittal plane\n \n [Labels on Earth's orbit (beginning at the Earth counterclockwise):]\nPerihelix, Declension, Obsequity, Hypothecate, Enceliopsis, Equinox (Solstice in British English)\n \n [Two angles in the plane are labeled as:]\nDeterminant of the date of Easter, Arctangent\n \n [The plane of the Moon is pictured in a small angle to the Earth's plane and named Astral Plane. The angle is presented between two lines (Greek Nu or Gamma and a double Greek Chi) and identified by a character that looks similar to a Greek Phi but with two vertical lines.]\n[The labels at the Moon's path are:]\nTropopause, Prolapse, Errata.\n \n [An arrow points to the Earth at the zero meridian on the equator. The label reads:]\nDimples of Venus\n \n \n \n",
+            "alt": "You shouldn't look directly at a partial eclipse because of the damage that can be caused by improperly aligning the solar-lunar orbital plane with the orbital bones around your eye.",
+            "img": "https://imgs.xkcd.com/comics/earth_orbital_diagram.png",
+            "title": "Earth Orbital Diagram",
+            "day": "18"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1879": {
+        "comic": {
+            "month": "8",
+            "num": 1879,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "Eclipse Birds",
+            "transcript": "[Cueball and Megan standing together looking to the right.]\nCueball: I heard that during an eclipse the birds all freak out.\nMegan: I guess we'll see!\n \n [Beat panel, the white background sky turns at the top slightly darker.]\n \n [As the sky turns to dusk sounds can be heard. It's written above Cueball and Megan inside squiggly bubbles.]\nChirp Chirp!\nChirp!\nPeep peep peep!\nSquawk!\n \n [The sky is now nearly dark, more at the top of the panel. The sounds continue, written in similar bubbles.]\nChirp!\nClank clank clank\nThe time is upon us!\nPeep!\nKachunk\nPrepare the blood cauldron!\nCueball: Wow.\nMegan: Isn't nature amazing?\n \n \n \n",
+            "alt": "'Hey! Put her down!' 'No, it's ok! The next chance for me to be carried to a blood cauldron isn't until 2024!'",
+            "img": "https://imgs.xkcd.com/comics/eclipse_birds.png",
+            "title": "Eclipse Birds",
+            "day": "21"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1880": {
+        "comic": {
+            "month": "8",
+            "num": 1880,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "Eclipse Review",
+            "transcript": "[A scatter plot with five labeled dots is drawn. The x-axis reads \"How cool it sounds like it would be\" and the y-axis is labeled with \"How cool it is to see in person\".]\n[Bottom left] Planetary conjunction\n[Bottom middle] Supermoon\n[Low left-center] Lunar eclipse\n[Low-center middle] Partial solar eclipse\n[Upper right, with a dotted arrow above it pointing up] Total solar eclipse\n \n \n \n",
+            "alt": "I watched from a beautiful nature reserve in central Missouri, and it was--without exaggeration--the coolest thing I've ever seen.",
+            "img": "https://imgs.xkcd.com/comics/eclipse_review.png",
+            "title": "Eclipse Review",
+            "day": "23"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1881": {
+        "comic": {
+            "month": "8",
+            "num": 1881,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "Drone Training",
+            "transcript": "[Black Hat stands in front of a store counter facing White Hat who stands behind.]\nBlack Hat: My drone keeps flying into the wrong rooms. Do you have anything to discourage it? \nWhite Hat: Sir, this is a pet store. \n \n Black Hat: Yeah, I was thinking one of those spray bottles for cats. \nWhite Hat: I don't think you can train a drone. \n \n [White Hat hands a spray bottle over the counter.]\nBlack Hat: Eh, they say that about cats, too. Plus, these days they probably all come with deep learning or whatever. Drones, I mean. Maybe cats too. \nWhite Hat: Fine, here's a bottle. \n \n Black Hat: Do you sell a shock collar that can fit around a Roomba? \nWhite Hat: I'm going to have to ask you to leave.\n \n \n \n \n",
+            "alt": "The joke will be on him in a few weeks when animal control shows up and takes custody of his Roomba.",
+            "img": "https://imgs.xkcd.com/comics/drone_training.png",
+            "title": "Drone Training",
+            "day": "25"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
     }
 }
