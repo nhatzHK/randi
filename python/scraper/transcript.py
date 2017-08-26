@@ -5,9 +5,9 @@
 #==============================================================================#
 import sys
 import traceback
-sys.path.insert (0, '/home/nhatz/Code/GitHub/bots/randi/python/lib')
+sys.path.insert (0, '/home/nhatz/Code/bots/randi/python/lib')
 PROMPT = "[xkcd Parser]"
-PREPATH = '/home/nhatz/Code/GitHub/randi/'
+PREPATH = '/home/nhatz/Code/GitHub/bots/randi/'
 
 #REFS = PREPATH + 'json/xkcd.references.json'
 REFS = 'xkcd.references.json'
