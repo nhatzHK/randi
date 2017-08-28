@@ -17,7 +17,6 @@ except FileNotFoundError:
     exit (2)
 
 sys.path.insert (0, PATH['lib'])
-sys.path.insert (0, "../scraper")
 try:
     import client_helpers as CLIENT
 except ModuleNotFoundError:
@@ -62,7 +61,6 @@ async def on_ready ():
 
 @Wame.event
 async def on_message (message):
-    global xkcd_refs, xkcd_index
     if not message.content.startswith (wame_config['prefix']):
         if Wame.user.mentioned_in(message) and not message.mention_everyone \
                 and not len(message.content.split("@here")) > 1 \
@@ -117,7 +115,7 @@ async def on_message (message):
                 embed_comic = await \
                         CLIENT.create_embed(online_latest)
             else:
-                local_latest = xkcd_refs[str(max(map(lambda x: int(x), xkcd_refs.keys ())))]
+                local_latest = xkcd_refs[str(max(list(xkcd_refs.keys ())))]
                 embed_comic = await \
                         CLIENT.create_embed (local_latest)
             await Wame.send_message (message.channel, embed = embed_comic)
@@ -127,19 +125,6 @@ async def on_message (message):
                     {'type': 'User', 'color': (0xff0000), 'client': Wame})
             report = await Wame.send_message (bug_channel, embed = embed_report)
             await Wame.pin_message (report)
-        elif command == 'update':
-            from update_references import update_ref
-            from index import update_index
-
-            update_ref()
-            xkcd_refs = CLIENT.loadJson(REF)
-            update_index()
-            xkcd_index = CLIENT.loadJson (INDEX)
-
-            local_latest = xkcd_refs[str(max(map(lambda x: int(x), xkcd_refs.keys ())))]
-            embed_comic = await \
-                    CLIENT.create_embed (local_latest)
-            await Wame.send_message (message.channel, embed = embed_comic)
         elif command == 'help':
             await Wame.send_message (message.channel, \
                     embed = wame_help)
