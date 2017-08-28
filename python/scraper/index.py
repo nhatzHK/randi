@@ -16,12 +16,13 @@ INDEX = PREPATH + 'xkcd.index.json'
 BLACK_LIST = PREPATH + 'xkcd.common.json'
 
 index = dict ()
-refs = CLIENT.loadJson (REFS)
 black_list = CLIENT.loadJson (BLACK_LIST)
 edited = False
 
 def update_index(references=REFS):
     global edited, index
+    refs = CLIENT.loadJson (REFS)
+
     for i in list(refs.keys ()):
         transcript = str ()
         title = str ()
