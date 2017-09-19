@@ -17,3 +17,5 @@ __*__
 
 # Private files
 *.priv
+*.priv.*
+priv.*
