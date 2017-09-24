@@ -15,7 +15,7 @@ async def purge (msg, wame):
             (msg.channel, 'Deleted {} message(s)'.format (len (deleted)))
 
 # Load the content of a json file
-# The return value isn't necessar a dictionary
+# The return value isn't necessary a dictionary
 # f is the file name (same dir or absolute path)
 def loadJson (f):
     a = dict ()
