@@ -10,13 +10,14 @@ try:
     with open (sys.argv [1]) as path_file:
         PATH = json.load (path_file)
 except IndexError: #FileNotFoundError
-    print ('Usage: python {} path/to/xkcd.path.json.priv'.format (sys.argv [0]))
+    print ('Usage: python {} path/to/priv.xkcd.path.json'.format (sys.argv [0]))
     exit (1)
 except FileNotFoundError:
     print ('Unable to open file: {}'.format (sys.argv[1]))
     exit (2)
 
 sys.path.insert (0, PATH['lib'])
+print(sys.path[0])
 try:
     import client_helpers as CLIENT
 except ModuleNotFoundError:
@@ -26,7 +27,7 @@ except ModuleNotFoundError:
 JSON = PATH['json']
 # Yep you should rename your config.json and append priv to it
 # This way you won't add even more private stuff on github
-CONFIG = JSON + "xkcd.config.json.priv"
+CONFIG = JSON + "priv.xkcd.config.json"
 INDEX = JSON + "xkcd.index.json"
 REF = JSON + "xkcd.references.json"
 BL = JSON + "xkcd.common.json"
@@ -61,20 +62,39 @@ async def on_ready ():
 
 @Wame.event
 async def on_message (message):
-    if not message.content.startswith (wame_config['prefix']):
-        if Wame.user.mentioned_in(message) and not message.mention_everyone \
-                and not len(message.content.split("@here")) > 1 \
-                and len(message.mentions) == 1:
-                    await Wame.send_message \
-                            (message.channel, embed = wame_help)
-    else:
+    if message.content.startswith (wame_config['prefix']):
+        
         args = await CLIENT.parse_args (message.content, wame_config['prefix'])
         command = args[0]
         args = args[1:]
         logging.info ('\nFull mess: {}\nCommand  : {}\nArgs     : {}'\
                 .format (message.content, command, args))
 
-        if command == 'xkcd':
+        if command in ['--random', '--rand']:
+            embed_comic = await CLIENT.random_embed (xkcd_refs)
+            await Wame.send_message (message.channel, embed = embed_comic)
+        elif command == '--latest':
+            online_latest = await CLIENT.get_online_xkcd ()
+            
+            if online_latest['status'] is 0: 
+                embed_comic = await \
+                        CLIENT.create_embed(online_latest)
+            else:
+                local_latest = xkcd_refs[str(max(list(xkcd_refs.keys ())))]
+                embed_comic = await \
+                        CLIENT.create_embed (local_latest)
+            await Wame.send_message (message.channel, embed = embed_comic)
+        elif command == '--report':
+            bug_channel = Wame.get_channel (wame_config['report_channel'])
+            embed_report = await CLIENT.report_embed (message, \
+                    {'type': 'User', 'color': (0xff0000), 'client': Wame})
+            report = await Wame.send_message (bug_channel, embed = embed_report)
+            await Wame.pin_message (report)
+        elif command in ['--help', '-h']:
+            await Wame.send_message (message.channel, \
+                    embed = wame_help)
+        else:
+            args.insert(0, command)
             tmp = await Wame.send_message (message.channel, 'Searching...')
 
             if len (args) is 0:
@@ -105,28 +125,5 @@ async def on_message (message):
                                 (message.channel, embed = embed_comic)
                     else:
                         await Wame.edit_message (tmp, "Timeout")
-        elif command == 'random':
-            embed_comic = await CLIENT.random_embed (xkcd_refs)
-            await Wame.send_message (message.channel, embed = embed_comic)
-        elif command == 'latest':
-            online_latest = await CLIENT.get_online_xkcd ()
-            
-            if online_latest['status'] is 0: 
-                embed_comic = await \
-                        CLIENT.create_embed(online_latest)
-            else:
-                local_latest = xkcd_refs[str(max(list(xkcd_refs.keys ())))]
-                embed_comic = await \
-                        CLIENT.create_embed (local_latest)
-            await Wame.send_message (message.channel, embed = embed_comic)
-        elif command == 'report':
-            bug_channel = Wame.get_channel (wame_config['report_channel'])
-            embed_report = await CLIENT.report_embed (message, \
-                    {'type': 'User', 'color': (0xff0000), 'client': Wame})
-            report = await Wame.send_message (bug_channel, embed = embed_report)
-            await Wame.pin_message (report)
-        elif command == 'help':
-            await Wame.send_message (message.channel, \
-                    embed = wame_help)
-
+        
 Wame.run (wame_config['token'])
