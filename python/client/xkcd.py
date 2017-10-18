@@ -63,7 +63,11 @@ async def on_ready ():
 @Wame.event
 async def on_message (message):
     if message.content.startswith (wame_config['prefix']):
-        
+        if message.mention_everyone \
+                or len(message.content.split("@here")) > 1 \
+                or len(message.mentions) > 1:
+                    return
+
         args = await CLIENT.parse_args (message.content, wame_config['prefix'])
         command = args[0]
         args = args[1:]

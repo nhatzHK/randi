@@ -89,11 +89,8 @@ async def clean(msg, wame):
 # NOTE: A prefix of length to is assumed
 async def parse_args(msg, prefix):
     args = msg.split(' ')
-    print(args)
     args = args[1:]
-    print(args)
     args = [a for a in args if a] # Take a wild guess: you missed. Try harder.
-    print(args)
     return args
 
 """
