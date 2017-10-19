@@ -1,0 +1,11 @@
+{
+    "--random": "random",
+    "--rand"  : "random",
+    "--latest": "latest",
+    "--last"  : "latest",
+    "--report": "report",
+    "--bug"   : "report",
+    "--help"  : "help",
+    "-h"      : "help",
+    "--search" : "search"
+}
