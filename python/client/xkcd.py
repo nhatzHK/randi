@@ -19,7 +19,7 @@ except FileNotFoundError:
 sys.path.insert (0, PATH['lib'])
 try:
     import client_helpers as CLIENT
-except ModuleNotFoundError:
+except ImportError:
     print ('Error: Module client_helpers not found in path.')
     exit (2)
 
