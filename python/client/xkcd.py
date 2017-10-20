@@ -46,13 +46,17 @@ xkcd_refs = CLIENT.loadJson (REF)
 blk_list = CLIENT.loadJson (BL)
 commands = CLIENT.loadJson (COMMANDS)
 
-wame_help = discord.Embed \
+wame_help = CLIENT.generate_help(commands, wame_config)
+
+"""
+discord.Embed \
         (title = wame_config['help']['title'], \
         colour = discord.Colour(0x123654), \
         url = wame_config['help']['url'], \
         description = wame_config['help']['description'])
 wame_help.set_footer (text = wame_config['help']['footer'], \
         icon_url = wame_config['help']['icon_url'])
+"""
 
 Wame = discord.Client ()
 wgame = discord.Game (name = wame_config['game'])
@@ -82,29 +86,17 @@ async def on_message (message):
 
         args = await CLIENT.parse_args (message.content, wame_config['prefix'])
         
-        # Empty message handling
-        if len(args) > 0:
-            command = args[0]
-            del args[0]
+        if len(args) == 0:
+            command = '--search'
+        elif not args[0] in comanager.com:
+            command = '--search'
         else:
-            command = False
+            command = args[0]
+            args = args[1:]
         
         logging.info ('\nFull mess: {}\nCommand  : {}\nArgs     : {}'\
                 .format (message.content, command, args))
-
-        # length 1, messag handling
-        # i.e   <prefix> --command <= length = 1
-        #       <prefix> --command arg0 arg2 <= length = 3
-        if len(args) > 1:
-            args = args[1:]
-
-        if command in comanager.com:
-            await comanager.run(message, command, args)
-        else:
-            # put the first arg back in the list
-            if command:
-                args.insert(0, command)
-
-            await comanager.run(message, '--search', args)
+        
+        await comanager.run(message, command, args)
 
 Wame.run (wame_config['token'])
