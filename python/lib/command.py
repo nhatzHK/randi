@@ -9,20 +9,25 @@ class CommandManager:
             index, 
             black_list, 
             dict_com, 
-            config, 
-            help_embed):
+            config):
+        
         self.client = client
         self.refs = refs
         self.index = index
         self.black_list = black_list
-        self._dict_com = dict_com
+        
+        self._dict_com = {x: dict_com[x]['func'] for x in dict_com}
         self.com = list (self._dict_com.keys ())
+        
         self.config = config
-        self.help_embed = help_embed
+        
+        self.help_embed = CLIENT.generate_help (dict_com, config)
+        
         self.report_feedback = discord.Embed (
                 description = "_Your report has been transmitted. \
                         \nThank you for contributing in making me better_",
                 colour = (0x00ff00))
+        
         self.not_found_message = discord.Embed (
                 description = "_I found nothing. I'm so sawry and sad :(_. \
                         \nReply with **`random`** for a surprise\n",
@@ -34,7 +39,7 @@ class CommandManager:
             f = CommandManager.__getattribute__ (self, f_name)
             await f (self, message, command, args)
         except AttributeError as ne:
-            raise NameError ("Attribute {f_name} not found.") from ne
+            raise NameError (f"Attribute {f_name} not found.") from ne
         except KeyError as ke:
             raise KeyError (f"No match found for {command}.") from ke
     
