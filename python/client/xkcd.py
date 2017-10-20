@@ -46,18 +46,6 @@ xkcd_refs = CLIENT.loadJson (REF)
 blk_list = CLIENT.loadJson (BL)
 commands = CLIENT.loadJson (COMMANDS)
 
-wame_help = CLIENT.generate_help(commands, wame_config)
-
-"""
-discord.Embed \
-        (title = wame_config['help']['title'], \
-        colour = discord.Colour(0x123654), \
-        url = wame_config['help']['url'], \
-        description = wame_config['help']['description'])
-wame_help.set_footer (text = wame_config['help']['footer'], \
-        icon_url = wame_config['help']['icon_url'])
-"""
-
 Wame = discord.Client ()
 wgame = discord.Game (name = wame_config['game'])
 
@@ -67,8 +55,7 @@ comanager = CommandManager(
         xkcd_index,
         blk_list,
         commands,
-        wame_config,
-        wame_help)
+        wame_config)
 
 @Wame.event
 async def on_ready ():

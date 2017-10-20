@@ -4,6 +4,32 @@ import random
 import discord
 from urllib.request import urlopen
 
+def generate_help(commands, config):
+    e_title = config['help']['title']
+    e_colour = discord.Colour (0x123654)
+    e_url = config['help']['url']
+    e_desc = config['help']['description']
+    for com in commands:
+        if 'usage' in commands[com]:
+            h = f"**{com}** \n\t{commands[com]['description']}\
+                    \n\t`@xkcd {commands[com]['usage']}`"
+
+            if 'alias' in commands[com]:
+                h += f"\n\tAliases: `{'`, `'.join(commands[com]['alias'])}`"
+
+            e_desc += f"\n\n{h}"
+
+    h_embed = discord.Embed (
+            title = e_title,
+            colour = e_colour,
+            url = e_url,
+            description = f"{e_desc}\n\n")
+    h_embed.set_footer (
+            text = config['help']['footer'],
+            icon_url = config['help']['icon_url'])
+    
+    return h_embed
+
 def is_someone(msg):
     return True
 
