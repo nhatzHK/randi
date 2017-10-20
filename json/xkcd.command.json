@@ -1,11 +1,45 @@
 {
-    "--random": "random",
-    "--rand"  : "random",
-    "--latest": "latest",
-    "--last"  : "latest",
-    "--report": "report",
-    "--bug"   : "report",
-    "--help"  : "help",
-    "-h"      : "help",
-    "--search" : "search"
+    "--search"  : {
+        "func"          : "search",
+        "usage"         : "--search [args]",
+        "description"   : "Search and post a strip with the words in `[args]`.\n\tEquivalent to `@xkcd [args]`."
+    },
+    "--random"  : {
+        "func"          : "random",
+        "usage"         : "--random",
+        "description"   : "Post a radom strip. \n\tEquivalent to `@xkcd`.",
+        "alias"         : ["--rand"]
+    },
+    "--rand"    : {
+        "func"          : "random"
+    },
+    "--latest"  : {
+        "func"          : "latest",
+        "usage"         : "--latest",
+        "description"   : "Show the most recently published strip.",
+        "alias"         : ["--last", "--fresh"]
+    },
+    "--last"    : {
+        "func"          : "latest"
+    },
+    "--fresh"   : {
+        "func"          : "latest"
+    },
+    "--report"  : {
+        "func"          : "report",
+        "usage"         : "--report <issue description>",
+        "description"   : "Report a bug.",
+        "alias"         : ["--bug"]
+    },
+    "--bug"     : {
+        "func"          : "report"
+    },
+    "--help"    : {
+        "func"          : "help",
+        "usage"         : "--help",
+        "description"   : "Display this message."
+    },
+    "-h"        : {
+        "func"          : "help"
+    }
 }
