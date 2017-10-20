@@ -15,23 +15,25 @@ INC_STR = "This transcript is incomplete. Please help editing it! Thanks."
 # Say that a file couldn't be reached
 def fileNotFound (prompt, f):
     print (prompt + " An error ocured while retrieving data from " + f + \
-            "\nMake sure the files exists and is accessible.")
+            "\nMake sure the file exists and is accessible.")
 
 #==============================================================================#
 #==============================================================================#
 
-# e,g t = '23: This is the title - explain xkcd'
+# e.g: t = '23: This is the title - explain xkcd'
 # This will remove the trailing ' - explain xkcd'
 # And '23: '
 # And return the resulting string 'This is the title'
 def extractTitle (t):
+    # Remove trailing xkcd
     title = t.split (' - explain xkcd')
     title = title [0]
+    
+    # Remove number
+    title = " ".join(title.split(' ')[1:])
     # Remove every char from the beginning until a whitespace is found
-    while title [0] != ' ':
-        title = title [1:]
-    # Return the string minus the first char which is a whitespace
-    return title [1:]
+    
+    return title
 
 #==============================================================================#
 #==============================================================================#

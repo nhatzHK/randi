@@ -24,7 +24,7 @@ comic.
   * xkcd.config.json
   ```sh
   cd json
-  cp xkcd.config.json xkcd.config.priv
+  cp xkcd.config.json xkcd.config.json.priv
   # Modify the new file to add the appropriate information
   ```
   * xkcd.path.json
