@@ -45274,5 +45274,581 @@
             "error": "",
             "complete": 0
         }
+    },
+    "1882": {
+        "comic": {
+            "month": "8",
+            "num": 1882,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "Color Models",
+            "transcript": "[A simple flowchart is shown. The text above the panel reads:]\nEvolution of my understanding of color over time:\n \n [On the left side is a vertical dashed line in gray, on top it's labeled:]\nGrade school\n[And at the bottom the label reads:]\nNow\n \n [Header above the chart:]\n\"Color\" is...\n \n [The chart starts with three items, one left and an other on the right, a third is below in the middle.]\n...three primary colors mixed together\n...a rainbow, and each color is a wavelength\n...unknowable (\"maybe what I see as blue, you see as...\")\n \n [Arrows from the left and the middle item point to a new left one, while two other arrows from the middle and the right item lead to one at the right.]\n...three-ish primary colors mixed together (RGB/RYB/CMYK)\n...a mix of infinite wavelengths filtered through three eye pigments\n \n [The arrows of both items point to one in the middle:]\n(something about the opponent color model)\n \n [The remaining items are all in the middle and each is connected by one arrow downwards to the next.]\n...an abstract multidimensional gamut (CIE 1931, L*a*b*, etc)\n...an abstract multidimensional gamut filtered through inconsistently-implemented device color profiles\n...a hyperdimensional four-sided quantum Klein manifold? Is that a thing?\n...hopefully somebody else's problem.\n \n \n \n",
+            "alt": "What if what *I* see as blue, *you* see as a slightly different blue because you're using Chrome instead of Firefox and despite a decade of messing with profiles we STILL can't get this right somehow.",
+            "img": "https://imgs.xkcd.com/comics/color_models.png",
+            "title": "Color Models",
+            "day": "28"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1883": {
+        "comic": {
+            "month": "8",
+            "num": 1883,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "Supervillain Plan",
+            "transcript": "[On the left of this single panel comic Black Hat sits on a high throne, showing a fist, and looking down to Cueball and Magan who stand in front of him on the right.]\n \n Black Hat: ... then, after our drones take control of the cities, we will detonate the devices. California will break off from the mainland and drift out to sea!\nMegan: How far out to sea? Will it put any of the cities in the UTC-9 time zone?\nBlack Hat: What? I don't know.\nMegan: One request: Can we make sure this doesn't happen during the daylight saving changeover?\n \n [Caption below the panel:]\nYou can tell when someone's been a programmer for a while because they develop a deep-seated fear of time zone problems.\n \n",
+            "alt": "Someday, some big historical event will happen during the DST changeover, and all the tick-tock articles chronicling how it unfolded will have to include a really annoying explanation next to their timelines.",
+            "img": "https://imgs.xkcd.com/comics/supervillain_plan.png",
+            "title": "Supervillain Plan",
+            "day": "30"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1884": {
+        "comic": {
+            "month": "9",
+            "num": 1884,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "Ringer Volume/Media Volume",
+            "transcript": "[A x-y-graph is shown and the header above is:]\nTrying to turn down the volume before a video starts playing:\n \n [At the line graph the horizontal axis is labeled with the text \"Time\" and an arrow pointing to the right. The vertical axis represents the volume but has no label. There are two signed lines, \"Ringer volume\" in black and \"Media volume\" in gray roughly at the same level. Below are eight smartphone screens showing the running app over time.]\n \n [The first seven screens showing a circle indicating that an app is loading. At the second screen a volume control is depicted with an arrow to the lower button.]\nTAP TAP TAP TAP\n[The \"Ringer volume\" decreases four times.]\n \n [Further in time before the third screen the volume control is depicted again with an arrow to the upper button.]\nTAP TAP TAP TAP\n[The \"Ringer volume\" increases to normal.]\n \n [Nothing happens on the 4th screen but at the 5th the volume control is shown again with an arrow to the lower button.]\nTAP TAP TAP\n[The \"Ringer volume\" decreases three times.]\n \n [Before the 6th screen the volume control is shown, again with an arrow to the upper button.]\nTAP TAP TAP\n[The \"Ringer volume\" increases back to normal.]\n \n [At the 7th screen there is again the volume control with an arrow to the lower button.]\nTAP TAP TAP TAP\n[The \"Ringer volume\" decreases four times.]\n \n [Before the 8th screen the volume control is shown with an arrow to the upper button and the tapping starts:]\nTAP TAP\n[The \"Ringer volume\" increases two times, still below normal, and the video starts at the screen.]\nTAP TAP\n[The \"Media volume\" increases two times above normal.]\nPerson in the video: HELLO, AND WELCOME TO...\n \n \n \n",
+            "alt": "Our new video ad campaign has our product's name shouted in the first 500 milliseconds, so we can reach the people in adjacent rooms while the viewer is still turning down the volume.",
+            "img": "https://imgs.xkcd.com/comics/ringer_volume_media_volume.png",
+            "title": "Ringer Volume/Media Volume",
+            "day": "1"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1885": {
+        "comic": {
+            "month": "9",
+            "num": 1885,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "Ensemble Model",
+            "transcript": "[Inside this single panel comic the header on top reads:]\nIn an ensemble model, forecasters run many different versions of a weather model with slightly different initial conditions. This helps account for uncertainty and shows forecasters a spread of possible outcomes.\n \n [To the left side a picture shows several gray overlapping swirling lines emitted from a point, then gradually diverging rightwards. Below are two smaller pictures; the first shows the lines connected to several loops and in the second it's still a similar figure to the above but moving into the opposite direction with the point emerged to a spiral.]\n \n [The text right to the pictures reads:]\nMembers in a typical ensemble:\nA universe where\u2026\n\u2026rain is 0.5% more likely in some areas\n\u2026wind speeds are slightly lower\n\u2026pressure levels are randomly tweaked\n\u2026dogs run slightly faster\n\u2026there's one extra cloud in the Bahamas\n\u2026Germany won WWII\n\u2026snakes are wide instead of long\n\u2026Will Smith took the lead in The Matrix instead of Wild Wild West\n\u2026swimming pools are carbonated\n\u2026sliced bread, after being banned in January 1943, was never re-legalized.\n \n \n \n",
+            "alt": "I'm in talks with Netflix to produce an alternate-universe crime drama about the world where sliced bread was never re-legalized, but it's going slowly because they keep changing their phone numbers and the door lock codes at their headquarters.",
+            "img": "https://imgs.xkcd.com/comics/ensemble_model.png",
+            "title": "Ensemble Model",
+            "day": "4"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1886": {
+        "comic": {
+            "month": "9",
+            "num": 1886,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "Typing Notifications",
+            "transcript": "[A sequence of eight panels representing the same conversation in an electronic chat. The header always reads:]\nWhat did you think of my show? Did you like it? Be honest!\n \n [The reply area on the first seven panels is empty, but on the 2nd, 3rd, 5th, and 7th the input is activated and showing three dots.]\n \n [On the last panel the reply area reads:]\nIt was great!\n \n [Caption below the panels:]\nMy least favorite aspect of typing notifications\n \n \n \n",
+            "alt": "Over the years I've decided I'd rather have them on than not, but I'm glad there aren't \"has opened a blank note to compose a reply to you\" notifications.",
+            "img": "https://imgs.xkcd.com/comics/typing_notifications.png",
+            "title": "Typing Notifications",
+            "day": "6"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1887": {
+        "comic": {
+            "month": "9",
+            "num": 1887,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "Two Down, One to Go",
+            "transcript": "[There are three rows equally filled with squares and above are year dates beginning from 2002 until 2017. The first year is cut on the left and the color is light gray then fading in to black until 2005. Left of the three rows the text reads:]\nTotal eclipse\nAurora\nMeteor storm\n[Below the year 2017 the squares in the first two rows are checked.]\n \n \n \n",
+            "alt": "The third row will probably have to wait until 2034, and maybe longer. If I see a daytime supernova, I'll replace the meteor storm with that and consider it 3/3.",
+            "img": "https://imgs.xkcd.com/comics/two_down_one_to_go.png",
+            "title": "Two Down, One to Go",
+            "day": "8"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1888": {
+        "comic": {
+            "month": "9",
+            "num": 1888,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "Still in Use",
+            "transcript": "[Cueball is trying to take out a trash bag from his garbage can.]\nTrash: Sorry, you can't empty the garbage yet. A paper towel in here is currently in use by some object in your house.\n \n \n \n",
+            "alt": "'Which one?' 'I dunno, it's your house. Just check each object.' 'Check it for *what*?' 'Whether it looks like it might have touched a paper towel at some point and then forgotten to let go.' '...' 'You can also Google to learn how to check which things are using which resources.' 'You know, I'll just leave the towel there and try again tomorrow.'",
+            "img": "https://imgs.xkcd.com/comics/still_in_use.png",
+            "title": "Still in Use",
+            "day": "11"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1889": {
+        "comic": {
+            "month": "9",
+            "num": 1889,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "xkcd Phone 6",
+            "transcript": "\n\n \n\n  \n \n [A smartphone is shown, the screen is slightly wider than the case, in the middle is a photo lens, and at the right bottom a small extra part is added to the screen.]\n[On top a bracket ranges nearly over the entire width of the case. The text reads:]\nFull-width rear camera\n[The label at the photo lens is:]\nFront camera (centered for eye contact during video chat)\n[The label on the extra part says:]\nExtra screen\n[At the bottom below the case a label reads:]\nWireless charging port\n \n [The labels left to the phone are:]\n4k pixels (50x80)\nRadium backlight\nSterile packaging\nCollege-ruled\nBroad spectrum SPF 30\nPre-seasoned\nBurns clean coal\nIncludes applicator\nFonts developed by NASA\nShroud of turn-style facial transfer unlock\nHigh thread count CPU\nScreen goes past the edge\nSafe for ages 6-8 months, 10 months, 18 months-3 years, and 12 years and older\n \n [The labels right to the phone are:]\nCDC partnership: Phone automatically administers seasonal flu vaccine to cheek every year\n12-function\nDishwasher safe\nGPS transmitter\n3-G acceleration\nPortable, solar-heated\nPore-cleaning strip\nMaximum strength\nNever needs sharpening\nCan survive up to 30 minutes out of water\nExclusive Audubon Society app identifies birds and lets you control their flight\n \n [Text below the phone:]\nIntroducing\nThe XKCD PHONE 6, VIII, 10, X, 26, and 1876\nWe didn't start this nonconsecutive version number war, but we will not lose it.\u2122\u00ae\u00a9\u00b0\n \n",
+            "alt": "We understand your privacy concerns; be assured that our phones will never store or transmit images of your face.",
+            "img": "https://imgs.xkcd.com/comics/xkcd_phone_6.png",
+            "title": "xkcd Phone 6",
+            "day": "13"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1890": {
+        "comic": {
+            "month": "9",
+            "num": 1890,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "What to Bring",
+            "transcript": "\n\n \n\n  \n \n Text in the top-left corner of the comic reads, \"Should you bring _____ to ______?\"\n The comic is laid out like a grid, with implements down the left-hand side (A knife / A gun / Water / A lid) and the type of \"fight\" across the top (A knife fight / A gun fight / A wood fire / An oil fire). The grid illustrates the \"match-ups\", with a green square denoting a \"correct\" match-up and a red square denoting a Very Bad Idea.\n From the top left corner, going from left to right, top to bottom, with each first item being on its own line in the grid, the squares are as follows:\n \n A knife to A knife fight: Green square, two combatants face off against each other with knives, equally matched.\nA knife to A gun fight: Red square, a person with a knife faces off against someone with a gun, and is clearly outmatched.\nA knife to A wood fire: Red square, a person holds a knife in a wood fire while saying \"OW OW OW\".\nA knife to An oil fire: Red square, the person with the knife scrapes at the oil inside the pan that's on fire while saying \"OW OW OW\". The scraping accompanied by the text \"SCRAPE SCRAPE\".\nA gun to A knife fight: Green square, the person with the gun points it at the opponent with the knife, who exclaims, \"Dude!\"\nA gun to A gun fight: Green square, two combatants point guns at one another, equally matched.\nA gun to A wood fire: Red square, the person with the gun shoots pointlessly three times at the wood fire, which carries on blazing. The shooting is accompanied by the text \"BLAM BLAM BLAM\".\nA gun to An oil fire: Red square, the person with the gun shoots at the flaming pan, which does nothing to put it out. The shooting is accompanied by the text \"BLAM\".\nWater to A knife fight: Red square, the person with the water throws it uselessly in the face of the person holding the knife.\nWater to A gun fight: Red square, the person with the water throws it uselessly in the face of the person holding the gun.\nWater to A wood fire: Green square, the person throws the water on the fire and successfully extinguishes it, which makes a \"SPLOOSH\" sound.\nWater to An oil fire: Red square, the person is shown reeling back from the oil fire, the water glass going flying, as the oil fire explodes with a \"FOOM\".\nA lid to A knife fight: Red square, the person with the lid comically places it on the head of the person with the knife, who stands there in confusion.\nA lid to A gun fight: Red square, the person with the lid ineffectually places it on top of the gun the other person is pointing at them.\nA lid to A wood fire: Red square, the person with the lid holds it near the wood fire, which does nothing to put out the fire.\nA lid to An oil fire: Green square, the person places the lid on top of the oil fire, which suffocates and extinguishes it.\n \n \n \n",
+            "alt": "I always figured you should never bring a gun to a gun fight because then you'll be part of a gun fight.",
+            "img": "https://imgs.xkcd.com/comics/what_to_bring.png",
+            "title": "What to Bring",
+            "day": "15"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1891": {
+        "comic": {
+            "month": "9",
+            "num": 1891,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "Obsolete Technology",
+            "transcript": "[Ponytail sits in front of an old computer. Megan stands behind her.]\nPonytail: Whoa, this is running MS-DOS! It's weird how new technology takes forever to reach some industries.\nMegan: Yeah. Like how we still use gunpowder for fireworks, even though we've had nuclear weapons for over 70 years.\n \n \n \n",
+            "alt": "And I can't believe some places still use fax machines. The electrical signals waste so much time going AROUND the Earth when neutrino beams can go straight through!",
+            "img": "https://imgs.xkcd.com/comics/obsolete_technology.png",
+            "title": "Obsolete Technology",
+            "day": "18"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1892": {
+        "comic": {
+            "month": "9",
+            "num": 1892,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "USB Cables",
+            "transcript": "\n\n \n\n  \n \n [15 USB cables are shown lying in a column. They are mostly very similar, with small differences. To the right of the cables there are 12 labels, as three of the labels belongs to three sets of two cables.]\n[2 cables] Carry power but not data\nCarries data but not power\nToo short\nCharges phone slowly\nWon't auto-activate portable charger\n[2 cables] Has annoying ferrite lumps\nHeavy and not very flexible\n[2 cables] Frayed\nPlug doesn't fit through case\nNeeds to be twisted to keep working\nWeird shape\nThe good one\n \n [Caption below the panel:]\nThe law of USB cables: No matter how many you get, you only ever have one good one.\n \n \n \n",
+            "alt": "Tag yourself, I'm \"frayed.\"",
+            "img": "https://imgs.xkcd.com/comics/usb_cables.png",
+            "title": "USB Cables",
+            "day": "20"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1893": {
+        "comic": {
+            "month": "9",
+            "num": 1893,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "Thread",
+            "transcript": "[A mock-up of a \u201ctweet\u201d from the site twitter.com is shown. It contains a mock-up of a user photo of the fictional character F\u2019nor that resembles Hairy, including a tiny line sketch of F\u2019nor\u2019s brown dragon Canth flying overhead. Below the tweet are several action buttons typical of a Twitter post for comments, replying, likes, etc.]\n \n F\u2019nor\n@fnor\nThread: The greatest threat to our life on Pern 1/1\n \n",
+            "alt": "Since the current Twitter threadfall kicked off in early 2016, we can expect it to continue until the mid 2060s when the next Interval begins.",
+            "img": "https://imgs.xkcd.com/comics/thread.png",
+            "title": "Thread",
+            "day": "22"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1894": {
+        "comic": {
+            "month": "9",
+            "num": 1894,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "Real Estate",
+            "transcript": "[Ponytail and Cueball sit in office chairs on either side of a desk. Ponytail looks at a piece of paper she is holding in her hand, more papers lie on the table. Cueball sits with his hands in his lap, thinking in a thought bubble before he replies to her remark.]\nPonytail: The sellers offer to drop their price by $10,000 and cover the driveway repairs.\nCueball [thinking]: These are all staggeringly large amounts of money that I have no idea how to even think about, let alone compare.\nCueball [speaking]: Tempting. We'll need a few hours to consider it.\n \n [Caption below the panels:]\nMe in any financial negotiation.\n \n \n \n",
+            "alt": "I tried converting the prices into pizzas, to put it in more familiar terms, and it just became a hard-to-think-about number of pizzas.",
+            "img": "https://imgs.xkcd.com/comics/real_estate.png",
+            "title": "Real Estate",
+            "day": "25"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1895": {
+        "comic": {
+            "month": "9",
+            "num": 1895,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "Worrying Scientist Interviews",
+            "transcript": "[A chart consisting of a line with double arrows that has 12 dots progressing from left to right. Each dot has a line going to a label above or below the line. Above the labels is another label belonging to an arrow to its right that points right. Above this is a larger caption:]\nHow worried you should be if you see local reporters interviewing scientists about a breaking news story, by field: \nMore worried --->\n \n [chart shows the following titles left to right (least to most worrisome), some above and some below the line however that doesn't affect their relative positions.  They are listed here in ascending worrisomeness for ease of viewing]\nArcheologist\nEconomist\nNutritionist\nCriminologist\nOrnithologist\nBotanist\nMarine biologist\nEntomologist\nAstronomer\nVirologist\nVulcanologist\nAstronomer who studies the sun\n \n \n \n",
+            "alt": "They always try to explain that they're called 'solar physicists', but the reporters interrupt with \"NEVER MIND THAT, TELL US WHAT'S WRONG WITH THE SUN!\"",
+            "img": "https://imgs.xkcd.com/comics/worrying_scientist_interviews.png",
+            "title": "Worrying Scientist Interviews",
+            "day": "27"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1896": {
+        "comic": {
+            "month": "9",
+            "num": 1896,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "Active Ingredients Only",
+            "transcript": "[A picture of a pack of cold medicine. At the top there is a large advert in three lines. In a black line, to the right of the advert, white text states what kind of medicine is in the pack. Below to the left is a square frame listing ingredients. Most of the text inside this frame is unreadable scribbles. To the right of the frame is another advert inside a black frame. On the side of the box are also unreadable scribbles, both at the top and down next to the ingredients list. At the bottom of the box it can be seen how the pack can open up.]\nActive Ingredients\nOnlyTM\nWe're not here to waste your time\u00ae\n \n Cold Medicine\n \n Active ingredients\n[Six lines of scribbles, with first a name, then a statement in brackets and finally a column right of this with a short line of scribbles.]\n \n Inactive ingredients\nNone\n \n No binders!\n \n \n \n",
+            "alt": "Contains the active ingredients from all competing cold medicines, plus the medicines for headaches, arthritis, insomnia, indigestion, and more, because who wants THOSE things?",
+            "img": "https://imgs.xkcd.com/comics/active_ingredients_only.png",
+            "title": "Active Ingredients Only",
+            "day": "29"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1897": {
+        "comic": {
+            "month": "10",
+            "num": 1897,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "Self Driving",
+            "transcript": "[Inside a frame there is the following text above an image:]\nTo complete your registration, please tell us whether or not this image contains a stop sign:\n \n [The square image is a drawing of a road leading up to a sign post with a hard to read word at the top part of the sign. The sign also has two smaller signs left and right with unreadable text. The image is of poor quality, but trees and other obstacles next to the road can be seen. Darkness around the edges of the image could indicate that it is night and the landscape is only lit up by a cars head lights.]\nSign: Stop\n \n [Beneath the image there are two large gray buttons with a word in each:]\nNo Yes\n \n [Beneath the buttons are the following text:]\nAnswer quickly \u2013 our self-driving car is almost at the intersection.\n \n [Caption beneath the frame:]\nSo much of \"AI\" is just figuring out way to offload work onto random strangers.\n \n \n \n",
+            "alt": "\"Crowdsourced steering\" doesn't sound quite as appealing as \"self driving.\"",
+            "img": "https://imgs.xkcd.com/comics/self_driving.png",
+            "title": "Self Driving",
+            "day": "2"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1898": {
+        "comic": {
+            "month": "10",
+            "num": 1898,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "October 2017",
+            "transcript": "[Megan and Cueball are walking.]\nMegan: Want to feel old?\nCueball: Why do you always start your factoids that way? Of course I don't want to feel old. I already feel old.\n \n [Slim beat panel where they keep walking.]\n \n [In a frame-less panel only Cueball is shown walking.]\nCueball: ...Fine, hit me.\n \n [Megan holds her hand up as they again are shown walking together. Cueball balls his hands up into fists in response to her comment.]\nMegan: If you broke a mirror back when the Aaron Sorkin Facebook movie came out, your seven years of bad luck would be over this week.\nCueball: Dammit.\n \n \n \n",
+            "alt": "And yet I have no trouble believing that the start of the 2016 election was several decades ago.",
+            "img": "https://imgs.xkcd.com/comics/october_2017.png",
+            "title": "October 2017",
+            "day": "4"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1899": {
+        "comic": {
+            "month": "10",
+            "num": 1899,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "Ears",
+            "transcript": "[Cueball is sitting with his back towards Megan who is lying on her back on a grassy hill. Both are looking up at a sky with small puffy clouds (one large, two small, and four tiny). In the background fields are visible below their vantage point.]\n \n [Same setting, but with the clouds removed, to make room for Cueball's text.]\nCueball: Do you ever just look up at the sky and wonder...\n \n [Same setting, zoomed a bit out to make more of the background fields visible, still with the clouds missing due to the text from the two people.]\nCueball: \"What are normal peoples' ears shaped like, that earbuds stay in without falling out?\"\nMegan: Man, who knows what's going on in there.\n \n \n \n",
+            "alt": "My theory is that most humans have been colonized with alien mind-control slugs that hold the earbuds for them, and the ones who can't wear earbuds are the only surviving free ones.",
+            "img": "https://imgs.xkcd.com/comics/ears.png",
+            "title": "Ears",
+            "day": "6"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1900": {
+        "comic": {
+            "month": "10",
+            "num": 1900,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "Jet Lag",
+            "transcript": "[Hairy, with more messed up hair than usual, is rubbing his eyes while small \"sleepy\" bubbles form over his head, while walking towards Ponytail.]\nHairy: Sorry, I just woke up.\nPonytail: It's 3 PM! ...Oh, of course, you're still jet lagged.\nHairy: I-yeah, that's it! I definitely didn't spend half the night reading Wikipedia articles about random maritime disasters.\n \n [Caption below the panel:]\nI love traveling, because my sleep schedule is as messed up as always, but suddenly I have an excuse.\n \n",
+            "alt": "I had some important research to do on proposed interstellar space missions, basketball statistics, canceled skyscrapers, and every article linked from \"Women in warfare and the military in the 19th century.\"",
+            "img": "https://imgs.xkcd.com/comics/jet_lag.png",
+            "title": "Jet Lag",
+            "day": "9"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1901": {
+        "comic": {
+            "month": "10",
+            "num": 1901,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "Logical",
+            "transcript": "[White Hat is spreading his arms and facing Cueball.]\nWhite Hat: We wouldn't have all these problems if people just learned to be more logical and science-driven instead of relying on feelings.\nCueball: Oh? What study are you basing that on?\nWhite Hat: It just seems obvious!\nWhite Hat: I mean, look at the crap these idiots believe!\n \n \n \n",
+            "alt": "It's like I've always said--people just need more common sense. But not the kind of common sense that lets them figure out that they're being condescended to by someone who thinks they're stupid, because then I'll be in trouble.",
+            "img": "https://imgs.xkcd.com/comics/logical.png",
+            "title": "Logical",
+            "day": "11"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1902": {
+        "comic": {
+            "month": "10",
+            "num": 1902,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "State Borders",
+            "transcript": "\n\n \n\n  \n \n [An outline map of the United States is shown, including state boundaries. The following edit marks are shown in red text:]\n[Minnesota's Northwest Angle is circled] Give to Canada\n[Border between Wisconsin and Michigan's Upper Peninsula is crossed out] This should be Wisconsin\n[New York's Long Island is circled, with arrows and question marks pointing to New Jersey and Connecticut] Move Long Island to NJ or CT or make it its own state\n[New York's eastern border has been straightened]\n[Wyoming's western border is moved to align with that of Colorado. The Montana/Idaho and Idaho/Utah borders are extended to reach the new border. Similarly, Colorado's eastern border is moved to align with that of Wyoming, and the Nebraska/Kansas border has been extended] Align to grid\n[West Virginia's northern panhandle has been given to Ohio and part of its eastern panhandle has been given to Maryland. In return, Western Maryland has been given to West Virginia. The altogether effect is that West Virginia and Maryland have more compact shapes] Clean Up\n[Rhode Island has been enlarged to encompass southeastern Massachusetts, and Delaware now takes up the entire Delmarva Peninsula] Enlarge Rhode Island & Delaware\n[The Oklahoma Panhandle has been extended west until it reaches Nevada, taking the northernmost parts of Arizona and New Mexico with it] If we're going to have a panhandle, why not commit to it?\n[The Missouri Bootheel has been given to Arkansas] Fix this thing\n[The part of Virginia west of the Appalachian Mountains has been given to Kentucky]\n[The southwestern and eastern borders of Nevada have been extended into Arizona until they meet a point. A part of California is slightly extended to reach the revised border]\n[Parts of Arizona and New Mexico have been ceded to Mexico, and part of Texas has been given to New Mexico, so that the southern borders of Arizona and New Mexico and the northern border of the Trans-Pecos area of Texas collectively form a straight line] Clean Up\n[Parts of northeastern Texas have been given to Arkansas and Louisiana]\n[The northern and southern borders of Tennessee have been straightened] Straighten to fix survey errors\n[A line has been traced along the coasts of South Carolina, Georgia, and northern Florida] Good curve! Keep.\n[Alaska's southeastern panhandle has been circled] Let's be honest - this should be Canada, too.\n[The Alabama/Florida border has been erased, and Alabama's eastern border has been extended south until it meets the Gulf of Mexico] Why should Florida get Alabama's coastline? It has plenty.\n \n [Caption below the panel:] \nIt was scary when graphic designers seized control of the country, but it turned out they just wanted to fix some things about the state borders that had always bothered them.\n \n \n \n",
+            "alt": "A schism between the pro-panhandle and anti-panhandle factions eventually led to war, but both sides spent too much time working on their flag designs to actually do much fighting.",
+            "img": "https://imgs.xkcd.com/comics/state_borders.png",
+            "title": "State Borders",
+            "day": "13"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1903": {
+        "comic": {
+            "month": "10",
+            "num": 1903,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "Bun Trend",
+            "transcript": "\n\n \n\n  \n \n [Beret Guy holds a stick and points at a board next to him. The board contains a picture of a rabbit, a data point graph and other notes.]\nBeret Guy: Good morning, Governor. Our tracking systems show a rapid increase in the number of buns around the Capitol.\n \n [Hairy is sitting at an office desk and facing Beret Guy in a frameless panel.]\nHairy: Buns?\nBeret Guy: Yes; there's been a long-term upward trend, but it has accelerated recently.\nHairy: The trend in... rabbits.\nBeret Guy: Yes.\n \n [Beret Guy takes out his phone.]\nHairy: So... so what?\nBeret Guy: So if you want to see some buns, there are lots of them outside!\nbeep!\nBeret Guy: Ooh!\nBeret Guy: There's a small one right now!\n \n [Zoom-in on Beret Guy.]\nHairy (offscreen): Do you... actually work for me?\nBeret Guy: Almost certainly. We had an election, right? I wrote my name in on the thing.\nHairy (offscreen): Security?\nBeret Guy: It's been an honor to serve.\n \n \n \n",
+            "alt": "Our experts have characterized the ecological impact of this trend as \"adorable.\"",
+            "img": "https://imgs.xkcd.com/comics/bun_trend.png",
+            "title": "Bun Trend",
+            "day": "16"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1904": {
+        "comic": {
+            "month": "10",
+            "num": 1904,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "Research Risks",
+            "transcript": "[A chart with two crossing lines with double arrows. Each arrow is labeled:]\nY axis top: High\nY axis bottom: Low\nX axis left: Low\nX axis right: High\n \n [Near each of the \"high\" ends of the two axis there is a label written in gray, with a line pointing to the relevant axis:]\nY axis: Risk of your research being used by a supervillain for world domination\nX axis: Risk of the thing you're studying breaking free from your facility and threatening the local population\n \n [The following points are on the charts upper left quadrant (in reading order):]\nProsthetics\nNeuroscience\nLaser Optics\nPharmacology\nMaterials Science\nSociology\nHistory\nPsychology\n \n [The following points are on the charts upper right quadrant (in reading order):]\nRobotics\nGenetic Engineering\nChemistry\nMicrobiology\n \n [The following points are on the charts lower left quadrant (in reading order):]\nGeology\nLinguistics\nPaleontology\nAstronomy\nMolasses Storage\nDentistry\n \n [The following points are on the charts lower right quadrant (in reading order):]\nBotany\nEntomology\nMycology\nMarine Biology\nOrnithology\n \n",
+            "alt": "The 1919 Great Boston Molasses Flood remained the deadliest confectionery containment accident until the Canadian Space Agency's 2031 orbital maple syrup delivery disaster.",
+            "img": "https://imgs.xkcd.com/comics/research_risks.png",
+            "title": "Research Risks",
+            "day": "18"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
+    },
+    "1905": {
+        "comic": {
+            "month": "10",
+            "num": 1905,
+            "link": "",
+            "year": "2017",
+            "news": "",
+            "safe_title": "Cast Iron Pan",
+            "transcript": "[White Hat is holding a pan by the handle pointing to the frying surface as he shows it to Cueball.]\nWhite Hat: Never clean a cast-iron pan with soap. It destroys the seasoning.\nCueball: Got it.\n \n [White Hat shift the pan to his right hand and lowers it to his side holding a finger up in front of Cueball.]\nWhite Hat: If you ever let soap touch the pan, throw it away. You're clearly not up to taking care of it.\nCueball: Wow, okay.\n \n [In a frame-less panel White Hat has taken the pan back to the first hand holding on the the edge while he holds his other hand close to the frying surface.]\nWhite Hat: Apply moisturizer to the pan daily to keep it fresh.\nCueball: ...Moisturizer?\nWhite Hat: Do you want it to get all wrinkly?\nCueball: ...I...guess not.\n \n [White Hat has shifted the pan to the second hand again holding it by the handle away from Cueball, while pointing at Cueball with the other hand.]\nWhite Hat: Twice a year, fill the pan with iron filings and leave it in direct sunlight for 24 hours.\nCueball: Wait. 24 hours of sun?\nWhite Hat: If you're not willing to travel to the Arctic, you don't deserve cast iron.\n \n \n \n",
+            "alt": "If you want to evenly space them, it's easiest to alternate between the Arctic and Antarctic. Some people just go to the Arctic twice, near the equinoxes so the visits are almost 6 months apart, but it's not the same.",
+            "img": "https://imgs.xkcd.com/comics/cast_iron_pans.png",
+            "title": "Cast Iron Pan",
+            "day": "20"
+        },
+        "stat_com": {
+            "status": 0,
+            "error": ""
+        },
+        "stat_tr": {
+            "status": 0,
+            "error": "",
+            "complete": 0
+        }
     }
 }

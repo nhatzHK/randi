@@ -21,7 +21,7 @@ print(sys.path[0])
 try:
     import client_helpers as CLIENT
     from command import CommandManager
-except ModuleNotFoundError:
+except ImportError:
     print ('Error: One or more modules were not found in path.')
     exit (2)
 
