@@ -1,5 +1,9 @@
 {
-    "prefix"          : "your_prefix",
+    "prefix"          : [
+	    "your_prefix",
+	    "your_other_prefixs",
+	    ".."
+    ],
     "token"           :  "your_token",
     "report_channel"  : "you_development_channel_for_bug_report",
     "help"            : {
