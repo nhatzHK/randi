@@ -43,7 +43,7 @@ a server.
 Once the bot is created and add in a server, run it:
 `python xkcd.py xkcd.path.json.priv`
 
-To use the bot from discord, use the help command (`<prefix>help`) to see the commands avvailable and how to use them.
+To use the bot from discord, use the help command (`@xkcd --help`) to see the commands avvailable and how to use them.
 
 For more detailed usage see
 [here](https://github.com/nhatzHK/randi/wiki#how-to))
