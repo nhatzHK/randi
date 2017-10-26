@@ -65,7 +65,9 @@ async def on_ready ():
 
 @Wame.event
 async def on_message (message):
-    if message.content.startswith (wame_config['prefix']):
+    logging.info ('\nPre-parsed: {}'.format (message.content))
+    if message.content.startswith (wame_config['prefix'][0]) or \
+            message.content.startswith (wame_config['prefix'][1]):
         if message.mention_everyone \
                 or len(message.content.split("@here")) > 1 \
                 or len(message.mentions) > 1:
