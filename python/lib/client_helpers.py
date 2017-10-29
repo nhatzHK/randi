@@ -153,15 +153,16 @@ async def get_xkcd(phrase, index, refs):
         else:
             online_check = await get_online_xkcd(number = phrase[0])
             if online_check['status'] is 0:
-                return online_check
+                # it\s to get shitty, get shitty
+                # FIXME: this is really shitty, gawd
+                return {'status': 0, 'comic': online_check}
 
     # Real search starts here
     matched = dict()
     score = dict()
     for word in phrase:
         if word in index:
-            m = index[word]
-            await combine(matched, m)
+            await combine(matched, index[word])
     
     if len(matched) > 0:
         max_score = matched \
